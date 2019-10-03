@@ -162,6 +162,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "EducationSystem";
             this.Text = "Education System";
+            this.Load += new System.EventHandler(this.EducationSystem_Load);
             this.panel1.ResumeLayout(false);
             this.Transfer_Panel.ResumeLayout(false);
             this.Transfer_Panel.PerformLayout();

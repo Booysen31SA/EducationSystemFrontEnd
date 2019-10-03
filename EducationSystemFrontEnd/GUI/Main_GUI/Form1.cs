@@ -1,11 +1,17 @@
-﻿using System;
+﻿using EducationSystemFrontEnd.deserialize.Appointment;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd
@@ -26,11 +32,16 @@ namespace EducationSystemFrontEnd
         private void TeacherPanel_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show(this, "Teacher");
+
+           
         }
 
         private void Appointment_Panel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this, "ASppointment");
+            Appointment app = new Appointment();
+
+            var JSONObj = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(app.AppointmentCreate());
+            MessageBox.Show(JSONObj["persalNumber"]);
         }
 
         private void Retirement_Panel_Click(object sender, EventArgs e)
@@ -43,5 +54,9 @@ namespace EducationSystemFrontEnd
             MessageBox.Show(this, "Transfer");
         }
 
+        private void EducationSystem_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
