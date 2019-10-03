@@ -1,6 +1,6 @@
 ﻿namespace EducationSystemFrontEnd
 {
-    partial class Form1
+    partial class EducationSystem
     {
         /// <summary>
         /// Required designer variable.
@@ -152,7 +152,7 @@
             this.panel2.Size = new System.Drawing.Size(919, 530);
             this.panel2.TabIndex = 2;
             // 
-            // Form1
+            // EducationSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -160,8 +160,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "EducationSystem";
+            this.Text = "Education System";
             this.panel1.ResumeLayout(false);
             this.Transfer_Panel.ResumeLayout(false);
             this.Transfer_Panel.PerformLayout();
