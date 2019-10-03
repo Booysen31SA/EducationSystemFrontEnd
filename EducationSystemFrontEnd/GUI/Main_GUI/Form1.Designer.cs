@@ -38,7 +38,7 @@
             this.TeacherPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.ContentPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.Transfer_Panel.SuspendLayout();
             this.Retirement_Panel.SuspendLayout();
@@ -144,20 +144,20 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Welcome to the Education System";
             // 
-            // panel2
+            // ContentPanel
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Location = new System.Drawing.Point(230, 60);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(919, 530);
-            this.panel2.TabIndex = 2;
+            this.ContentPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ContentPanel.Location = new System.Drawing.Point(230, 60);
+            this.ContentPanel.Name = "ContentPanel";
+            this.ContentPanel.Size = new System.Drawing.Size(919, 530);
+            this.ContentPanel.TabIndex = 2;
             // 
             // EducationSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 602);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.ContentPanel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "EducationSystem";
@@ -188,7 +188,7 @@
         private System.Windows.Forms.Panel Appointment_Panel;
         private System.Windows.Forms.Label Appointment;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel ContentPanel;
     }
 }
 
