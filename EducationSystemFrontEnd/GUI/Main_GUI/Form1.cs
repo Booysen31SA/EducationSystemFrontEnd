@@ -57,7 +57,7 @@ namespace EducationSystemFrontEnd
 
         private void Transfer_Panel_Click(object sender, EventArgs e)
         {
-
+          
         }
 
         private void EducationSystem_Load(object sender, EventArgs e)
