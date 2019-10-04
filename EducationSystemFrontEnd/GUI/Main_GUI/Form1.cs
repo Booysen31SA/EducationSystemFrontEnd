@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
+using static EducationSystemFrontEnd.deserialize.Appointment.appointment;
 
 namespace EducationSystemFrontEnd
 {
@@ -38,10 +39,15 @@ namespace EducationSystemFrontEnd
 
         private void Appointment_Panel_Click(object sender, EventArgs e)
         {
-            Appointment app = new Appointment();
+            AppointmentSend app = new AppointmentSend();
+            String appointment = "";
 
-            var JSONObj = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(app.AppointmentCreate());
-            MessageBox.Show(JSONObj["persalNumber"]);
+            var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            String json = app.AppointmentCreate();
+
+            Rootobject objList1 = (Rootobject)serializer.Deserialize(json, typeof(Rootobject));
+
+            MessageBox.Show(objList1.reason.reason);
         }
 
         private void Retirement_Panel_Click(object sender, EventArgs e)
@@ -51,7 +57,7 @@ namespace EducationSystemFrontEnd
 
         private void Transfer_Panel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this, "Transfer");
+
         }
 
         private void EducationSystem_Load(object sender, EventArgs e)

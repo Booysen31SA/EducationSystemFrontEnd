@@ -65,9 +65,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appointment.cs" />
+    <Compile Include="AppointmentSend.cs" />
     <Compile Include="deserialize\Appointment\AppointmentObj.cs" />
-    <Compile Include="deserialize\Appointment\UniversalAppointment.cs" />
     <Compile Include="deserialize\Response.cs" />
     <Compile Include="GUI\Main_GUI\Form1.cs">
       <SubType>Form</SubType>

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EducationSystemFrontEnd
 {
-    class Appointment
+    class AppointmentSend
     {
 
         private const String BASE_URL = "http://localhost:8080/appointment/create";
@@ -19,6 +19,10 @@ namespace EducationSystemFrontEnd
               "\"appointment\":{" +
               "\"persalNumber\"     : \"2\"," +
               "\"appointmentToSee\" : \"Matt\"" +
+              "}," +
+              "\"appointment\":{" +
+              "\"persalNumber\"     : \"2\"," +
+              "\"appointmentToSee\" : \"j\"" +
               "}," +
              "\"dateAndTime\":{" +
               "\"persal_Number\" : \"2\"," +
