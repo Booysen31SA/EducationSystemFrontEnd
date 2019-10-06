@@ -65,17 +65,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppointmentSend.cs" />
-    <Compile Include="deserialize\Appointment\AppointmentObj.cs" />
-    <Compile Include="deserialize\Response.cs" />
+    <Compile Include="GUI\LoginForm\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LoginForm\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Main_GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Main_GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Requests\Appointment\AppointmentObj.cs" />
+    <Compile Include="Requests\Appointment\AppointmentRequest.cs" />
+    <Compile Include="Requests\Login\LoginObj.cs" />
+    <Compile Include="Requests\Login\LoginRequest.cs" />
     <Compile Include="Run_Program\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\LoginForm\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Main_GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,5 +124,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -161,6 +161,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "EducationSystem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Education System";
             this.Load += new System.EventHandler(this.EducationSystem_Load);
             this.panel1.ResumeLayout(false);
