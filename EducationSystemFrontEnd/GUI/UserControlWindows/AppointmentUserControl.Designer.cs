@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Date = new System.Windows.Forms.Label();
             this.Time = new System.Windows.Forms.Label();
@@ -44,21 +43,13 @@
             this.DateCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TimeCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ReasonCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Appointment";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 92);
+            this.label2.Location = new System.Drawing.Point(55, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 13);
             this.label2.TabIndex = 1;
@@ -121,7 +112,7 @@
             // 
             this.dateTimePicker2.CustomFormat = "HH:MM tt";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(202, 142);
+            this.dateTimePicker2.Location = new System.Drawing.Point(202, 143);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.ShowUpDown = true;
             this.dateTimePicker2.Size = new System.Drawing.Size(113, 20);
@@ -176,11 +167,21 @@
             this.ReasonCol.Text = "Reason";
             this.ReasonCol.Width = 200;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(55, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Create Appointment";
+            // 
             // AppointmentUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.ReasonText);
             this.Controls.Add(this.dateTimePicker2);
@@ -191,7 +192,6 @@
             this.Controls.Add(this.Time);
             this.Controls.Add(this.Date);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "AppointmentUserControl";
             this.Size = new System.Drawing.Size(1124, 705);
             this.Load += new System.EventHandler(this.AppointmentUserControl_Load);
@@ -201,8 +201,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Date;
         private System.Windows.Forms.Label Time;
@@ -218,5 +216,6 @@
         private System.Windows.Forms.ColumnHeader DateCol;
         private System.Windows.Forms.ColumnHeader TimeCol;
         private System.Windows.Forms.ColumnHeader ReasonCol;
+        private System.Windows.Forms.Label label3;
     }
 }
