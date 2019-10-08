@@ -38,6 +38,9 @@
             this.Submit = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.ReasonText = new System.Windows.Forms.RichTextBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.Persal_Number = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Appointment_to_See = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -130,11 +133,34 @@
             this.ReasonText.TabIndex = 9;
             this.ReasonText.Text = "";
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Persal_Number,
+            this.Appointment_to_See});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(408, 85);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(695, 567);
+            this.listView1.TabIndex = 10;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // Persal_Number
+            // 
+            this.Persal_Number.Text = "Persal Number";
+            this.Persal_Number.Width = 100;
+            // 
+            // Appointment_to_See
+            // 
+            this.Appointment_to_See.Text = "Appointment to See";
+            this.Appointment_to_See.Width = 150;
+            // 
             // AppointmentUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.ReasonText);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.Submit);
@@ -165,5 +191,8 @@
         private System.Windows.Forms.Button Submit;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.RichTextBox ReasonText;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader Persal_Number;
+        private System.Windows.Forms.ColumnHeader Appointment_to_See;
     }
 }

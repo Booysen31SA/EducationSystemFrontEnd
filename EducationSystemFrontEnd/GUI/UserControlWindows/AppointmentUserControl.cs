@@ -15,6 +15,8 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
     public partial class AppointmentUserControl : UserControl
     {
         private static AppointmentUserControl _instance;
+        private EducationSystem Education = new EducationSystem();
+        private AppointmentRequest appointmentRequest = new AppointmentRequest();
         public AppointmentUserControl()
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
 
         private void AppointmentUserControl_Load(object sender, EventArgs e)
         {
-           
+            GetAll();
         }
         public static AppointmentUserControl Instance
         {
@@ -38,16 +40,35 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            EducationSystem Education = new EducationSystem();
-            AppointmentRequest appointmentRequest = new AppointmentRequest();
+            
             String unae = Education.getUserName();
             String response = appointmentRequest.CreateAppointment(Education.getUserName(), AppointmentToSeeText.Text, getDate(), getTime(), ReasonText.Text, Education.getRole());
 
             if(response != null)
             {
                 RootObject appointment = JsonConvert.DeserializeObject<RootObject>(response);
+                GetAll();
             }
             
+        }
+
+        private void GetAll()
+        {
+            listView1.Items.Clear();
+            String response = appointmentRequest.GetAllAppointments();
+            listView1.View = View.Details;
+
+           
+            listView1.GridLines = true;
+            if (response != null)
+            {
+                List<AppointmentObj> AppointmentCollection = JsonConvert.DeserializeObject<List<AppointmentObj>>(response);
+
+                foreach (AppointmentObj pl in AppointmentCollection)
+                {
+                    listView1.Items.Add(new ListViewItem(new string[] { pl.PersalNumber, pl.AppointmentToSee}));
+                }
+            }
         }
         private String getDate()
         {

@@ -12,6 +12,18 @@ namespace EducationSystemFrontEnd.Requests.Appointment
     class AppointmentRequest
     {
         private readonly String AppointmentURL = "http://localhost:8080/appointment";
+
+        public String GetAllAppointments()
+        {
+            String Response = null;
+            WebRequest requestObjGet = WebRequest.Create(AppointmentURL + "/getall");
+            requestObjGet.Method = "GET";
+            requestObjGet.Credentials = new NetworkCredential("admin", "password");
+            HttpWebResponse ResponseObjGet = null;
+            ResponseObjGet = (HttpWebResponse)requestObjGet.GetResponse();
+            Response = getHttpResponse(ResponseObjGet);
+            return Response;
+        }
      public string CreateAppointment(String persalNumber, String appointToSee, String date,String time, String reason, String role)
         {
             EducationSystem Education = new EducationSystem();
@@ -36,7 +48,7 @@ namespace EducationSystemFrontEnd.Requests.Appointment
             requestObjPost.Method = "POST";
             requestObjPost.ContentType = "application/json";
 
-            requestObjPost.Credentials = new NetworkCredential("", Education.getPassword());
+            requestObjPost.Credentials = new NetworkCredential(role, Education.getPassword());
 
             Response = getHttpResponse(sendResponse(requestObjPost, Json));
             return Response;

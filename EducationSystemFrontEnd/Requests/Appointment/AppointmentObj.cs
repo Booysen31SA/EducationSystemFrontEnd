@@ -12,7 +12,9 @@ namespace EducationSystemFrontEnd.Requests.Appointment
     }
     public class AppointmentObj
     {
-        public string PersalNumber { get; set; }
-        public string AppointmentToSee { get; set; }
+        private String persalNumber;
+        private String appointmentToSee;
+        public string PersalNumber { get => persalNumber; set => persalNumber = value; }
+        public string AppointmentToSee { get => appointmentToSee; set => appointmentToSee = value; }
     }
 }
