@@ -60,6 +60,8 @@ namespace EducationSystemFrontEnd
         private void Appointment_Panel_Click(object sender, EventArgs e)
         {
             AppointmentDisplay();
+            AppointmentUserControl appointment = new AppointmentUserControl();
+            appointment.GetAll();
         }
 
         private void Retirement_Panel_Click(object sender, EventArgs e)
@@ -113,9 +115,9 @@ namespace EducationSystemFrontEnd
             }
             else
             {
-
                 AppointmentUserControl.Instance.BringToFront();
             }
+
         }
         private void RetirementDisplay()
         {
@@ -156,6 +158,6 @@ namespace EducationSystemFrontEnd
                 BlacnkUserControl.Instance.BringToFront();
             }
         }
-        
+
     }
 }

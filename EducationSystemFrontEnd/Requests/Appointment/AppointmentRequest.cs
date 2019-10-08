@@ -12,21 +12,36 @@ namespace EducationSystemFrontEnd.Requests.Appointment
     class AppointmentRequest
     {
         private readonly String AppointmentURL = "http://localhost:8080/appointment";
+        private EducationSystem Education = new EducationSystem();
+        private int i = 0;
 
-        public String GetAllAppointments(String get)
+        public String GetAllAppointments(String get, String Role)
         {
             String Response = null;
-            WebRequest requestObjGet = WebRequest.Create(AppointmentURL + "/getall/"+get);
-            requestObjGet.Method = "GET";
-            requestObjGet.Credentials = new NetworkCredential("admin", "password");
-            HttpWebResponse ResponseObjGet = null;
-            ResponseObjGet = (HttpWebResponse)requestObjGet.GetResponse();
-            Response = getHttpResponse(ResponseObjGet);
+           
+            try
+            {
+                
+                WebRequest requestObjGet = WebRequest.Create(AppointmentURL + "/getall/" + get);
+                requestObjGet.Method = "GET";
+                requestObjGet.Credentials = new NetworkCredential(Role, Education.getPassword());
+                HttpWebResponse ResponseObjGet = null;
+                ResponseObjGet = (HttpWebResponse)requestObjGet.GetResponse();
+                Response = getHttpResponse(ResponseObjGet);
+            }
+            catch (WebException)
+            {
+                i++;
+                if(i == 2)
+                {
+                    MessageBox.Show("unauthorized, No access allowed");
+                }
+            }
             return Response;
         }
      public string CreateAppointment(String persalNumber, String appointToSee, String date,String time, String reason, String role)
         {
-            EducationSystem Education = new EducationSystem();
+            
             String Response = "Created";
             string Json = "{" +
             "\"appointment\":{" +

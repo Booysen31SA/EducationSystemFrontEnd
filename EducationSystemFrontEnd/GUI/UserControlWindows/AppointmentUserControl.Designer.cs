@@ -44,6 +44,10 @@
             this.TimeCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ReasonCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.PersalNumberReadtxt = new System.Windows.Forms.TextBox();
+            this.ReadSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -176,11 +180,49 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Create Appointment";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(55, 375);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Find a users Appointment";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(55, 417);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Persal Number";
+            // 
+            // PersalNumberReadtxt
+            // 
+            this.PersalNumberReadtxt.Location = new System.Drawing.Point(202, 414);
+            this.PersalNumberReadtxt.Name = "PersalNumberReadtxt";
+            this.PersalNumberReadtxt.Size = new System.Drawing.Size(159, 20);
+            this.PersalNumberReadtxt.TabIndex = 14;
+            // 
+            // ReadSearch
+            // 
+            this.ReadSearch.Location = new System.Drawing.Point(202, 456);
+            this.ReadSearch.Name = "ReadSearch";
+            this.ReadSearch.Size = new System.Drawing.Size(75, 23);
+            this.ReadSearch.TabIndex = 15;
+            this.ReadSearch.Text = "Search";
+            this.ReadSearch.UseVisualStyleBackColor = true;
+            // 
             // AppointmentUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.ReadSearch);
+            this.Controls.Add(this.PersalNumberReadtxt);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.ReasonText);
@@ -217,5 +259,9 @@
         private System.Windows.Forms.ColumnHeader TimeCol;
         private System.Windows.Forms.ColumnHeader ReasonCol;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox PersalNumberReadtxt;
+        private System.Windows.Forms.Button ReadSearch;
     }
 }

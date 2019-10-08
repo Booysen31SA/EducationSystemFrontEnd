@@ -24,7 +24,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
 
         private void AppointmentUserControl_Load(object sender, EventArgs e)
         {
-            GetAll();
+           
         }
         public static AppointmentUserControl Instance
         {
@@ -71,12 +71,12 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
             
         }
 
-        private void GetAll()
+        public void GetAll()
         {
             listView1.Items.Clear();
-            String Appointmentresponse = appointmentRequest.GetAllAppointments("appointment");
-            String DateAndTimeResponse = appointmentRequest.GetAllAppointments("dateandtime"); ;
-            String ReasonResponse = appointmentRequest.GetAllAppointments("reason");
+            String Appointmentresponse = appointmentRequest.GetAllAppointments("appointment", Education.getRole());
+            String DateAndTimeResponse = appointmentRequest.GetAllAppointments("dateandtime", Education.getRole()); ;
+            String ReasonResponse = appointmentRequest.GetAllAppointments("reason", Education.getRole());
             listView1.View = View.Details;
 
            
