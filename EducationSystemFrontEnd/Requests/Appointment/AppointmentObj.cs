@@ -10,7 +10,7 @@ namespace EducationSystemFrontEnd.Requests.Appointment
     {
      public AppointmentObj Appointment { get; set; }
         public DateAndTimeObj DateAndTime { get; set; }
-        public ReasonObj ReasonObj { get; set; }
+        public ReasonObj Reason { get; set; }
     }
     public class AppointmentObj
     {

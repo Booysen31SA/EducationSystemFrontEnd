@@ -24,7 +24,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
 
         private void AppointmentUserControl_Load(object sender, EventArgs e)
         {
-           
+            GetAll();
         }
         public static AppointmentUserControl Instance
         {
@@ -74,9 +74,9 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
         public void GetAll()
         {
             listView1.Items.Clear();
-            String Appointmentresponse = appointmentRequest.GetAllAppointments("appointment", Education.getRole());
-            String DateAndTimeResponse = appointmentRequest.GetAllAppointments("dateandtime", Education.getRole()); ;
-            String ReasonResponse = appointmentRequest.GetAllAppointments("reason", Education.getRole());
+            String Appointmentresponse = appointmentRequest.GetAllAppointments("appointment");
+            String DateAndTimeResponse = appointmentRequest.GetAllAppointments("dateandtime"); ;
+            String ReasonResponse = appointmentRequest.GetAllAppointments("reason");
             listView1.View = View.Details;
 
            
@@ -89,8 +89,8 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
 
                 foreach (AppointmentObj pl in AppointmentCollection)
                 {
-                    int indexDateAndTime = DateAndTimeCollection.FindIndex(delegate(DateAndTimeObj i) { return i.persal_Number == pl.PersalNumber; });
-                    int indexReason = ReasonCollection.FindIndex(delegate (ReasonObj i) { return i.persal_Number == pl.PersalNumber; });
+                    int indexDateAndTime = DateAndTimeCollection.FindIndex(delegate(DateAndTimeObj i) { return i.persal_Number.Equals(pl.PersalNumber); });
+                    int indexReason = ReasonCollection.FindIndex(delegate (ReasonObj i) { return i.persal_Number.Equals(pl.PersalNumber); });
                     String date = DateAndTimeCollection.ElementAt(indexDateAndTime).date;
                     String time = DateAndTimeCollection.ElementAt(indexDateAndTime).time;
                     String reason = ReasonCollection.ElementAt(indexDateAndTime).reason;
@@ -109,6 +109,55 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
             string theTimeH = dateTimePicker2.Value.ToString("HH");
             string theTimeM = dateTimePicker2.Value.ToString("MM");
             return theTimeH + "h" + theTimeM;
+        }
+
+        private void getReadObject(String response)
+        {
+            listView1.Items.Clear();
+            RootObject appointment = JsonConvert.DeserializeObject<RootObject>(response);
+            String pNumber = appointment.Appointment.PersalNumber;
+            String toSee = appointment.Appointment.AppointmentToSee;
+            String date = appointment.DateAndTime.date;
+            String time = appointment.DateAndTime.time;
+            String reason = appointment.Reason.reason;
+            listView1.Items.Add(new ListViewItem(new string[] { pNumber,
+                                                                toSee,
+                                                                date,
+                                                                time,
+                                                                reason }));
+        }
+        private void ReadSearch_Click(object sender, EventArgs e)
+        {
+            String unae = Education.getUserName();
+            if (unae == null)
+            {
+                Education.CredentialCheck();
+                unae = Education.getUserName();
+                if (unae != null)
+                {
+                    String response = appointmentRequest.ReadAppointment(PersalNumberReadtxt.Text, Education.getRole());
+
+                    if (response != null)
+                    {
+                        getReadObject(response);
+                    }
+                }
+
+            }
+            else
+            {
+                String response = appointmentRequest.ReadAppointment(PersalNumberReadtxt.Text, Education.getRole());
+
+                if (response != null)
+                {
+                    getReadObject(response);
+                }
+            }
+        }
+
+        private void GetAllBtn_Click(object sender, EventArgs e)
+        {
+            GetAll();
         }
     }
 }

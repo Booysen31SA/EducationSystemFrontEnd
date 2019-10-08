@@ -48,6 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.PersalNumberReadtxt = new System.Windows.Forms.TextBox();
             this.ReadSearch = new System.Windows.Forms.Button();
+            this.GetAllBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -213,12 +214,24 @@
             this.ReadSearch.TabIndex = 15;
             this.ReadSearch.Text = "Search";
             this.ReadSearch.UseVisualStyleBackColor = true;
+            this.ReadSearch.Click += new System.EventHandler(this.ReadSearch_Click);
+            // 
+            // GetAllBtn
+            // 
+            this.GetAllBtn.Location = new System.Drawing.Point(286, 456);
+            this.GetAllBtn.Name = "GetAllBtn";
+            this.GetAllBtn.Size = new System.Drawing.Size(75, 23);
+            this.GetAllBtn.TabIndex = 16;
+            this.GetAllBtn.Text = "Get All";
+            this.GetAllBtn.UseVisualStyleBackColor = true;
+            this.GetAllBtn.Click += new System.EventHandler(this.GetAllBtn_Click);
             // 
             // AppointmentUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.GetAllBtn);
             this.Controls.Add(this.ReadSearch);
             this.Controls.Add(this.PersalNumberReadtxt);
             this.Controls.Add(this.label4);
@@ -263,5 +276,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox PersalNumberReadtxt;
         private System.Windows.Forms.Button ReadSearch;
+        private System.Windows.Forms.Button GetAllBtn;
     }
 }

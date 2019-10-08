@@ -15,7 +15,7 @@ namespace EducationSystemFrontEnd.Requests.Appointment
         private EducationSystem Education = new EducationSystem();
         private int i = 0;
 
-        public String GetAllAppointments(String get, String Role)
+        public String GetAllAppointments(String get)
         {
             String Response = null;
            
@@ -24,7 +24,7 @@ namespace EducationSystemFrontEnd.Requests.Appointment
                 
                 WebRequest requestObjGet = WebRequest.Create(AppointmentURL + "/getall/" + get);
                 requestObjGet.Method = "GET";
-                requestObjGet.Credentials = new NetworkCredential(Role, Education.getPassword());
+                requestObjGet.Credentials = new NetworkCredential("admin","password");
                 HttpWebResponse ResponseObjGet = null;
                 ResponseObjGet = (HttpWebResponse)requestObjGet.GetResponse();
                 Response = getHttpResponse(ResponseObjGet);
@@ -69,6 +69,30 @@ namespace EducationSystemFrontEnd.Requests.Appointment
             return Response;
         }
 
+        public String ReadAppointment(String get, String Role)
+        {
+            String Response = null;
+
+            try
+            {
+
+                WebRequest requestObjGet = WebRequest.Create(AppointmentURL + "/read/" + get);
+                requestObjGet.Method = "GET";
+                requestObjGet.Credentials = new NetworkCredential(Role, Education.getPassword());
+                HttpWebResponse ResponseObjGet = null;
+                ResponseObjGet = (HttpWebResponse)requestObjGet.GetResponse();
+                Response = getHttpResponse(ResponseObjGet);
+            }
+            catch (WebException)
+            {
+                i++;
+                if (i == 2)
+                {
+                    MessageBox.Show("unauthorized, No access allowed");
+                }
+            }
+            return Response;
+        }
         private HttpWebResponse sendResponse(WebRequest sendHttpResponse, String JsonData)
         {
             HttpWebResponse httpResponse = null;
@@ -98,6 +122,7 @@ namespace EducationSystemFrontEnd.Requests.Appointment
                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
                     ReturnResponse = streamReader.ReadToEnd();
+                    streamReader.Close();
                 }
             }
             else{ }
