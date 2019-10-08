@@ -42,12 +42,31 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
         {
             
             String unae = Education.getUserName();
-            String response = appointmentRequest.CreateAppointment(Education.getUserName(), AppointmentToSeeText.Text, getDate(), getTime(), ReasonText.Text, Education.getRole());
-
-            if(response != null)
+            if(unae == null)
             {
-                RootObject appointment = JsonConvert.DeserializeObject<RootObject>(response);
-                GetAll();
+                Education.CredentialCheck();
+                unae = Education.getUserName();
+                if(unae != null)
+                {
+                    String response = appointmentRequest.CreateAppointment(Education.getUserName(), AppointmentToSeeText.Text, getDate(), getTime(), ReasonText.Text, Education.getRole());
+
+                    if (response != null)
+                    {
+                        RootObject appointment = JsonConvert.DeserializeObject<RootObject>(response);
+                        GetAll();
+                    }
+                }
+
+            }
+            else
+            {
+                String response = appointmentRequest.CreateAppointment(Education.getUserName(), AppointmentToSeeText.Text, getDate(), getTime(), ReasonText.Text, Education.getRole());
+
+                if (response != null)
+                {
+                    RootObject appointment = JsonConvert.DeserializeObject<RootObject>(response);
+                    GetAll();
+                }
             }
             
         }
