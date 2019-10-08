@@ -13,10 +13,10 @@ namespace EducationSystemFrontEnd.Requests.Appointment
     {
         private readonly String AppointmentURL = "http://localhost:8080/appointment";
 
-        public String GetAllAppointments()
+        public String GetAllAppointments(String get)
         {
             String Response = null;
-            WebRequest requestObjGet = WebRequest.Create(AppointmentURL + "/getall");
+            WebRequest requestObjGet = WebRequest.Create(AppointmentURL + "/getall/"+get);
             requestObjGet.Method = "GET";
             requestObjGet.Credentials = new NetworkCredential("admin", "password");
             HttpWebResponse ResponseObjGet = null;

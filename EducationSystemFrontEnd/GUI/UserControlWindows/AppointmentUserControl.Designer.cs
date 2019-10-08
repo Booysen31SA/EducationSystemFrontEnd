@@ -41,6 +41,9 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.Persal_Number = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Appointment_to_See = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DateCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TimeCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ReasonCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -137,7 +140,10 @@
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Persal_Number,
-            this.Appointment_to_See});
+            this.Appointment_to_See,
+            this.DateCol,
+            this.TimeCol,
+            this.ReasonCol});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(408, 85);
             this.listView1.Name = "listView1";
@@ -148,12 +154,27 @@
             // Persal_Number
             // 
             this.Persal_Number.Text = "Persal Number";
-            this.Persal_Number.Width = 100;
+            this.Persal_Number.Width = 150;
             // 
             // Appointment_to_See
             // 
             this.Appointment_to_See.Text = "Appointment to See";
             this.Appointment_to_See.Width = 150;
+            // 
+            // DateCol
+            // 
+            this.DateCol.Text = "Date ";
+            this.DateCol.Width = 200;
+            // 
+            // TimeCol
+            // 
+            this.TimeCol.Text = "Time";
+            this.TimeCol.Width = 100;
+            // 
+            // ReasonCol
+            // 
+            this.ReasonCol.Text = "Reason";
+            this.ReasonCol.Width = 200;
             // 
             // AppointmentUserControl
             // 
@@ -194,5 +215,8 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader Persal_Number;
         private System.Windows.Forms.ColumnHeader Appointment_to_See;
+        private System.Windows.Forms.ColumnHeader DateCol;
+        private System.Windows.Forms.ColumnHeader TimeCol;
+        private System.Windows.Forms.ColumnHeader ReasonCol;
     }
 }

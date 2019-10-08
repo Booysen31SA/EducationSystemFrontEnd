@@ -55,18 +55,28 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
         private void GetAll()
         {
             listView1.Items.Clear();
-            String response = appointmentRequest.GetAllAppointments();
+            String Appointmentresponse = appointmentRequest.GetAllAppointments("appointment");
+            String DateAndTimeResponse = appointmentRequest.GetAllAppointments("dateandtime"); ;
+            String ReasonResponse = appointmentRequest.GetAllAppointments("reason");
             listView1.View = View.Details;
 
            
             listView1.GridLines = true;
-            if (response != null)
+            if (Appointmentresponse != null)
             {
-                List<AppointmentObj> AppointmentCollection = JsonConvert.DeserializeObject<List<AppointmentObj>>(response);
+                List<AppointmentObj> AppointmentCollection = JsonConvert.DeserializeObject<List<AppointmentObj>>(Appointmentresponse);
+                List<DateAndTimeObj> DateAndTimeCollection = JsonConvert.DeserializeObject<List<DateAndTimeObj>>(DateAndTimeResponse);
+                List<ReasonObj> ReasonCollection = JsonConvert.DeserializeObject<List<ReasonObj>>(ReasonResponse);
 
                 foreach (AppointmentObj pl in AppointmentCollection)
                 {
-                    listView1.Items.Add(new ListViewItem(new string[] { pl.PersalNumber, pl.AppointmentToSee}));
+                    int indexDateAndTime = DateAndTimeCollection.FindIndex(delegate(DateAndTimeObj i) { return i.persal_Number == pl.PersalNumber; });
+                    int indexReason = ReasonCollection.FindIndex(delegate (ReasonObj i) { return i.persal_Number == pl.PersalNumber; });
+                    String date = DateAndTimeCollection.ElementAt(indexDateAndTime).date;
+                    String time = DateAndTimeCollection.ElementAt(indexDateAndTime).time;
+                    String reason = ReasonCollection.ElementAt(indexDateAndTime).reason;
+                    listView1.Items.Add(new ListViewItem(new string[] { pl.PersalNumber, pl.AppointmentToSee, date, time, reason}));
+
                 }
             }
         }
