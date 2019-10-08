@@ -159,5 +159,26 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
         {
             GetAll();
         }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            String unae = Education.getUserName();
+            if (unae == null)
+            {
+                Education.CredentialCheck();
+                unae = Education.getUserName();
+                if (unae != null)
+                {
+                    String response = appointmentRequest.DeleteAppointment(PersalNumberReadtxt.Text, Education.getRole());
+                    GetAll();
+                }
+
+            }
+            else
+            {
+                String response = appointmentRequest.DeleteAppointment(PersalNumberReadtxt.Text, Education.getRole());
+                GetAll();
+            }
+        }
     }
 }

@@ -93,6 +93,31 @@ namespace EducationSystemFrontEnd.Requests.Appointment
             }
             return Response;
         }
+
+        public String DeleteAppointment(String get, String Role)
+        {
+            String Response = null;
+
+            try
+            {
+
+                WebRequest requestObjGet = WebRequest.Create(AppointmentURL + "/delete/" + get);
+                requestObjGet.Method = "GET";
+                requestObjGet.Credentials = new NetworkCredential(Role, Education.getPassword());
+                HttpWebResponse ResponseObjGet = null;
+                ResponseObjGet = (HttpWebResponse)requestObjGet.GetResponse();
+                Response = getHttpResponse(ResponseObjGet);
+            }
+            catch (WebException)
+            {
+                i++;
+                if (i == 2)
+                {
+                    MessageBox.Show("unauthorized, No access allowed");
+                }
+            }
+            return Response;
+        }
         private HttpWebResponse sendResponse(WebRequest sendHttpResponse, String JsonData)
         {
             HttpWebResponse httpResponse = null;
