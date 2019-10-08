@@ -55,7 +55,7 @@
             this.panel1.Controls.Add(this.TeacherPanel);
             this.panel1.Location = new System.Drawing.Point(12, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 530);
+            this.panel1.Size = new System.Drawing.Size(200, 705);
             this.panel1.TabIndex = 0;
             // 
             // Transfer_Panel
@@ -149,14 +149,14 @@
             this.ContentPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ContentPanel.Location = new System.Drawing.Point(230, 60);
             this.ContentPanel.Name = "ContentPanel";
-            this.ContentPanel.Size = new System.Drawing.Size(919, 530);
+            this.ContentPanel.Size = new System.Drawing.Size(1124, 705);
             this.ContentPanel.TabIndex = 2;
             // 
             // EducationSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1186, 602);
+            this.ClientSize = new System.Drawing.Size(1366, 777);
             this.Controls.Add(this.ContentPanel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);

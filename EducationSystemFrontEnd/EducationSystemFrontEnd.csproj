@@ -77,6 +77,36 @@
     <Compile Include="GUI\Main_GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControlWindows\AppointmentUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControlWindows\AppointmentUserControl.Designer.cs">
+      <DependentUpon>AppointmentUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControlWindows\BlacnkUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControlWindows\BlacnkUserControl.Designer.cs">
+      <DependentUpon>BlacnkUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControlWindows\RetirementUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControlWindows\RetirementUserControl.Designer.cs">
+      <DependentUpon>RetirementUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControlWindows\TransferUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControlWindows\TransferUserControl.Designer.cs">
+      <DependentUpon>TransferUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControlWindows\UserUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControlWindows\UserUserControl.Designer.cs">
+      <DependentUpon>UserUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Requests\Appointment\AppointmentObj.cs" />
     <Compile Include="Requests\Appointment\AppointmentRequest.cs" />
     <Compile Include="Requests\Login\LoginObj.cs" />
@@ -88,6 +118,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Main_GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControlWindows\AppointmentUserControl.resx">
+      <DependentUpon>AppointmentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControlWindows\BlacnkUserControl.resx">
+      <DependentUpon>BlacnkUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControlWindows\RetirementUserControl.resx">
+      <DependentUpon>RetirementUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControlWindows\TransferUserControl.resx">
+      <DependentUpon>TransferUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControlWindows\UserUserControl.resx">
+      <DependentUpon>UserUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

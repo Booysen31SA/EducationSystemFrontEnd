@@ -8,12 +8,13 @@ namespace EducationSystemFrontEnd.Requests.Login
 {
     class LoginObj
     {
-        public Logindata loginData { get; set; }
+        private String persal_Number;
+        private String userRole;
+        private String userPassword;
+
+        public string Persal_Number { get => persal_Number; set => persal_Number = value; }
+        public string UserRole { get => userRole; set => userRole = value; }
+        public string UserPassword { get => userPassword; set => userPassword = value; }
     }
-    public class Logindata
-    {
-        public String persal_Number { get; set; }
-        public String userRole { get; set; }
-        public String userPassword { get; set; }
-    }
+  
     }

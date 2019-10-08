@@ -1,4 +1,5 @@
 ﻿using EducationSystemFrontEnd.GUI.LoginForm;
+using EducationSystemFrontEnd.GUI.UserControlWindows;
 using EducationSystemFrontEnd.Requests.Appointment;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -19,51 +20,59 @@ namespace EducationSystemFrontEnd
 {
     public partial class EducationSystem : Form
     {
-        private String persal_Number = null;
-        private String User_Role = null;
-        private String password = null;
+        private static String persal_Number;
+        private static String User_Role;
+        private static String password;
         public EducationSystem()
         {
             InitializeComponent();
-            CredentialCheck();
         }
 
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void EducationSystem_Load(object sender, EventArgs e)
         {
-            
+            CredentialCheck();
+            UserDisplay();
+            AppointmentDisplay();
+            RetirementDisplay();
+            TransferDisplay();
+            BlankDisplay();
+        }
+        public String getPassword()
+        {
+            return password;
+        }
+        public String getUserName()
+        {
+            return persal_Number;
+        }
+        public String getRole()
+        {
+            return User_Role;
         }
 
         private void TeacherPanel_Click_1(object sender, EventArgs e)
         {
+            UserDisplay();
             MessageBox.Show(this, "Teacher");
-
-           
         }
 
         private void Appointment_Panel_Click(object sender, EventArgs e)
         {
-            AppointmentRequest appointmentRequest = new AppointmentRequest();
-            String response = appointmentRequest.CreateAppointment();
-
-            RootObject appointment = JsonConvert.DeserializeObject<RootObject>(response);
-            MessageBox.Show(appointment.Appointment.PersalNumber);
+            AppointmentDisplay();
         }
 
         private void Retirement_Panel_Click(object sender, EventArgs e)
         {
+            RetirementDisplay();
             MessageBox.Show(this, "Retirement");
         }
 
         private void Transfer_Panel_Click(object sender, EventArgs e)
         {
-          
+            TransferDisplay();
         }
 
-        private void EducationSystem_Load(object sender, EventArgs e)
-        {
-
-        }
 
         public void CredentialCheck()
         {
@@ -79,5 +88,74 @@ namespace EducationSystemFrontEnd
             User_Role = role;
             password = pss;
         }
+
+        private void UserDisplay()
+        {
+            if (!ContentPanel.Controls.Contains(UserUserControl.Instance))
+            {
+                ContentPanel.Controls.Add(UserUserControl.Instance);
+                UserUserControl.Instance.Dock = DockStyle.Fill;
+                UserUserControl.Instance.BringToFront();
+            }
+            else
+            {
+
+                UserUserControl.Instance.BringToFront();
+            }
+        }
+        private void AppointmentDisplay()
+        {
+            if (!ContentPanel.Controls.Contains(AppointmentUserControl.Instance))
+            {
+                ContentPanel.Controls.Add(AppointmentUserControl.Instance);
+                AppointmentUserControl.Instance.Dock = DockStyle.Fill;
+                AppointmentUserControl.Instance.BringToFront();
+            }
+            else
+            {
+
+                AppointmentUserControl.Instance.BringToFront();
+            }
+        }
+        private void RetirementDisplay()
+        {
+            if (!ContentPanel.Controls.Contains(RetirementUserControl.Instance))
+            {
+                ContentPanel.Controls.Add(RetirementUserControl.Instance);
+                RetirementUserControl.Instance.Dock = DockStyle.Fill;
+                RetirementUserControl.Instance.BringToFront();
+            }
+            else
+            {
+                RetirementUserControl.Instance.BringToFront();
+            }
+        }
+        private void TransferDisplay()
+        {
+            if (!ContentPanel.Controls.Contains(TransferUserControl.Instance))
+            {
+                ContentPanel.Controls.Add(TransferUserControl.Instance);
+                TransferUserControl.Instance.Dock = DockStyle.Fill;
+                TransferUserControl.Instance.BringToFront();
+            }
+            else
+            {
+                TransferUserControl.Instance.BringToFront();
+            }
+        }
+        private void BlankDisplay()
+        {
+            if (!ContentPanel.Controls.Contains(BlacnkUserControl.Instance))
+            {
+                ContentPanel.Controls.Add(BlacnkUserControl.Instance);
+                BlacnkUserControl.Instance.Dock = DockStyle.Fill;
+                BlacnkUserControl.Instance.BringToFront();
+            }
+            else
+            {
+                BlacnkUserControl.Instance.BringToFront();
+            }
+        }
+        
     }
 }

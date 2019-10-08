@@ -34,14 +34,14 @@ namespace EducationSystemFrontEnd.GUI.LoginForm
         private void CredCheck(String userJson)
         {
             LoginObj loginCredential = JsonConvert.DeserializeObject<LoginObj>(userJson);
-            String pumber = loginCredential.loginData.persal_Number;
-            String role = loginCredential.loginData.userRole;
-            String pword = loginCredential.loginData.userPassword;
+            String pumber = loginCredential.Persal_Number;
+            String role = loginCredential.UserRole;
+            String pword = loginCredential.UserPassword;
             if (pumber == PersalNumberTextBox.Text && pword == passwordTextBox.Text)
             {
                 EducationSystem educationSystem = new EducationSystem();
                 educationSystem.updateCred(pumber, role, pword);
-                this.Dispose();
+                this.Close();
             }
             else
             {

@@ -5,35 +5,38 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd.Requests.Appointment
 {
     class AppointmentRequest
     {
         private readonly String AppointmentURL = "http://localhost:8080/appointment";
-     public string CreateAppointment()
+     public string CreateAppointment(String persalNumber, String appointToSee, String date,String time, String reason, String role)
         {
+            EducationSystem Education = new EducationSystem();
             String Response = "Created";
             string Json = "{" +
             "\"appointment\":{" +
-            "\"persalNumber\"     : \"2\"," +
-            "\"appointmentToSee\" : \"Matt\"" +
+            "\"persalNumber\"     : \""+persalNumber+"\"," +
+            "\"appointmentToSee\" : \""+appointToSee+"\"" +
             "}," +
             "\"dateAndTime\":{" +
-            "\"persal_Number\" : \"2\"," +
-            "\"date\"          : \"17/5\"," +
-            "\"time\"          : \"17h30\"" +
+            "\"persal_Number\" : \"" + persalNumber + "\"," +
+            "\"date\"          : \"" + date + "\"," +
+            "\"time\"          : \"" + time + "\"" +
             "}," +
             "\"reason\":{" +
-            "\"persal_Number\" : \"2\"," +
-            "\"reason\"        : \"vist\"" +
+            "\"persal_Number\" : \"" + persalNumber + "\"," +
+            "\"reason\"        : \"" + reason + "\"" +
             "}" +
             "}"
             ;
             WebRequest requestObjPost = WebRequest.Create(AppointmentURL+"/create");
             requestObjPost.Method = "POST";
             requestObjPost.ContentType = "application/json";
-            requestObjPost.Credentials = new NetworkCredential("admin", "password");
+
+            requestObjPost.Credentials = new NetworkCredential("", Education.getPassword());
 
             Response = getHttpResponse(sendResponse(requestObjPost, Json));
             return Response;
@@ -42,13 +45,20 @@ namespace EducationSystemFrontEnd.Requests.Appointment
         private HttpWebResponse sendResponse(WebRequest sendHttpResponse, String JsonData)
         {
             HttpWebResponse httpResponse = null;
-            using (var streamWriter = new StreamWriter(sendHttpResponse.GetRequestStream()))
+            try
             {
-                streamWriter.Write(JsonData);
-                streamWriter.Flush();
-                streamWriter.Close();
+                using (var streamWriter = new StreamWriter(sendHttpResponse.GetRequestStream()))
+                {
+                    streamWriter.Write(JsonData);
+                    streamWriter.Flush();
+                    streamWriter.Close();
 
-                httpResponse = (HttpWebResponse)sendHttpResponse.GetResponse();
+                    httpResponse = (HttpWebResponse)sendHttpResponse.GetResponse();
+                }
+            }
+            catch (WebException)
+            {
+                MessageBox.Show("unauthorized, No access allowed");
             }
             return httpResponse;
         }
@@ -56,10 +66,14 @@ namespace EducationSystemFrontEnd.Requests.Appointment
         private String getHttpResponse(HttpWebResponse httpResponse)
         {
             String ReturnResponse = null;
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+           if(httpResponse != null)
             {
-                ReturnResponse = streamReader.ReadToEnd();
+               using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    ReturnResponse = streamReader.ReadToEnd();
+                }
             }
+            else{ }
 
             return ReturnResponse;
         }
