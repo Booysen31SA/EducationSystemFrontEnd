@@ -110,7 +110,7 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.CustomFormat = "HH:MM tt";
+            this.dateTimePicker2.CustomFormat = "HH:mm tt";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(202, 143);
             this.dateTimePicker2.Name = "dateTimePicker2";
