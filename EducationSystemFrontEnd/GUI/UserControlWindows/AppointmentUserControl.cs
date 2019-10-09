@@ -169,15 +169,28 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                 unae = Education.getUserName();
                 if (unae != null)
                 {
-                    String response = appointmentRequest.DeleteAppointment(PersalNumberReadtxt.Text, Education.getRole());
-                    GetAll();
+                    if (DeleteAppointment.Text == unae)
+                    {
+                        String response = appointmentRequest.DeleteAppointment(DeleteAppointment.Text, Education.getRole());
+                        GetAll();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to Delete, can Only delete your own Appointment");
+                    }
                 }
-
             }
             else
             {
-                String response = appointmentRequest.DeleteAppointment(PersalNumberReadtxt.Text, Education.getRole());
-                GetAll();
+                if (DeleteAppointment.Text == unae)
+                {
+                    String response = appointmentRequest.DeleteAppointment(DeleteAppointment.Text, Education.getRole());
+                    GetAll();
+                }
+                else
+                {
+                    MessageBox.Show("Unable to Delete, can Only delete your own Appointment");
+                }
             }
         }
     }
