@@ -111,6 +111,8 @@
     <Compile Include="Requests\Appointment\AppointmentRequest.cs" />
     <Compile Include="Requests\Login\LoginObj.cs" />
     <Compile Include="Requests\Login\LoginRequest.cs" />
+    <Compile Include="Requests\Retirement\RetirementObj.cs" />
+    <Compile Include="Requests\Retirement\RetirementRequest.cs" />
     <Compile Include="Run_Program\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\LoginForm\Login.resx">
