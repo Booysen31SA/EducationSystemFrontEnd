@@ -102,14 +102,14 @@
             // 
             this.dateTimePicker1.CustomFormat = " dd/MMMM/yyyy ";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(202, 113);
+            this.dateTimePicker1.Location = new System.Drawing.Point(202, 112);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(159, 20);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // Submit
             // 
-            this.Submit.Location = new System.Drawing.Point(202, 302);
+            this.Submit.Location = new System.Drawing.Point(202, 303);
             this.Submit.Name = "Submit";
             this.Submit.Size = new System.Drawing.Size(75, 23);
             this.Submit.TabIndex = 7;
@@ -121,7 +121,7 @@
             // 
             this.dateTimePicker2.CustomFormat = "HH:mm tt";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(202, 143);
+            this.dateTimePicker2.Location = new System.Drawing.Point(202, 142);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.ShowUpDown = true;
             this.dateTimePicker2.Size = new System.Drawing.Size(113, 20);
@@ -145,9 +145,9 @@
             this.TimeCol,
             this.ReasonCol});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(408, 85);
+            this.listView1.Location = new System.Drawing.Point(381, 85);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(695, 567);
+            this.listView1.Size = new System.Drawing.Size(722, 526);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -257,7 +257,7 @@
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(202, 586);
+            this.Delete.Location = new System.Drawing.Point(202, 588);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(75, 23);
             this.Delete.TabIndex = 20;
