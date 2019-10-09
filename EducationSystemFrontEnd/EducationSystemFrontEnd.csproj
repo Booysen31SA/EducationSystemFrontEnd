@@ -115,6 +115,8 @@
     <Compile Include="Requests\Retirement\RetirementRequest.cs" />
     <Compile Include="Requests\School\TransferRequest.cs" />
     <Compile Include="Requests\School\TransferObj.cs" />
+    <Compile Include="Requests\User\UserObj.cs" />
+    <Compile Include="Requests\User\UserRequest.cs" />
     <Compile Include="Run_Program\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\LoginForm\Login.resx">
