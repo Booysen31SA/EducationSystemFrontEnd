@@ -15,7 +15,7 @@ namespace EducationSystemFrontEnd.Requests.Retirement
         private EducationSystem Education = new EducationSystem();
         private int i = 0;
 
-        public String GetAllAppointments(String get)
+        public String GetAllRetirements(String get)
         {
             String Response = null;
 

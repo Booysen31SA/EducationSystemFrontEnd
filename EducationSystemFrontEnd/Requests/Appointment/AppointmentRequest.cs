@@ -45,7 +45,7 @@ namespace EducationSystemFrontEnd.Requests.Appointment
             String Response = "Created";
             string Json = "{" +
             "\"appointment\":{" +
-            "\"persalNumber\"     : \""+persalNumber+"\"," +
+            "\"persal_Num\"     : \""+persalNumber+"\"," +
             "\"appointmentToSee\" : \""+appointToSee+"\"" +
             "}," +
             "\"dateAndTime\":{" +
