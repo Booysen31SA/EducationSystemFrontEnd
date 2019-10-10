@@ -61,7 +61,7 @@
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(185, 507);
+            this.Delete.Location = new System.Drawing.Point(185, 473);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(75, 23);
             this.Delete.TabIndex = 40;
@@ -71,7 +71,7 @@
             // 
             // DeleteRetirement
             // 
-            this.DeleteRetirement.Location = new System.Drawing.Point(185, 481);
+            this.DeleteRetirement.Location = new System.Drawing.Point(185, 447);
             this.DeleteRetirement.Name = "DeleteRetirement";
             this.DeleteRetirement.Size = new System.Drawing.Size(159, 20);
             this.DeleteRetirement.TabIndex = 39;
@@ -79,7 +79,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(38, 488);
+            this.label7.Location = new System.Drawing.Point(38, 454);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 13);
             this.label7.TabIndex = 38;
@@ -88,7 +88,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 450);
+            this.label6.Location = new System.Drawing.Point(38, 422);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 13);
             this.label6.TabIndex = 37;
@@ -96,7 +96,7 @@
             // 
             // GetAllBtn
             // 
-            this.GetAllBtn.Location = new System.Drawing.Point(269, 386);
+            this.GetAllBtn.Location = new System.Drawing.Point(269, 370);
             this.GetAllBtn.Name = "GetAllBtn";
             this.GetAllBtn.Size = new System.Drawing.Size(75, 23);
             this.GetAllBtn.TabIndex = 36;
@@ -106,7 +106,7 @@
             // 
             // ReadSearch
             // 
-            this.ReadSearch.Location = new System.Drawing.Point(185, 386);
+            this.ReadSearch.Location = new System.Drawing.Point(185, 370);
             this.ReadSearch.Name = "ReadSearch";
             this.ReadSearch.Size = new System.Drawing.Size(75, 23);
             this.ReadSearch.TabIndex = 35;
@@ -116,7 +116,7 @@
             // 
             // PersalNumberReadtxt
             // 
-            this.PersalNumberReadtxt.Location = new System.Drawing.Point(185, 351);
+            this.PersalNumberReadtxt.Location = new System.Drawing.Point(185, 344);
             this.PersalNumberReadtxt.Name = "PersalNumberReadtxt";
             this.PersalNumberReadtxt.Size = new System.Drawing.Size(159, 20);
             this.PersalNumberReadtxt.TabIndex = 34;
@@ -124,7 +124,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 358);
+            this.label4.Location = new System.Drawing.Point(38, 351);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 33;
@@ -133,7 +133,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 321);
+            this.label2.Location = new System.Drawing.Point(38, 312);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 13);
             this.label2.TabIndex = 32;
@@ -142,7 +142,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 70);
+            this.label3.Location = new System.Drawing.Point(38, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 13);
             this.label3.TabIndex = 31;
@@ -195,7 +195,7 @@
             // 
             // Submit
             // 
-            this.Submit.Location = new System.Drawing.Point(185, 267);
+            this.Submit.Location = new System.Drawing.Point(185, 253);
             this.Submit.Name = "Submit";
             this.Submit.Size = new System.Drawing.Size(75, 23);
             this.Submit.TabIndex = 27;
@@ -285,7 +285,7 @@
             // 
             // Clear
             // 
-            this.Clear.Location = new System.Drawing.Point(269, 267);
+            this.Clear.Location = new System.Drawing.Point(269, 253);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(75, 23);
             this.Clear.TabIndex = 46;
