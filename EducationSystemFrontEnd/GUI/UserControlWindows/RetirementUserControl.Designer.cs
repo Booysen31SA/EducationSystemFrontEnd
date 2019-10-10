@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.Delete = new System.Windows.Forms.Button();
-            this.DeleteAppointment = new System.Windows.Forms.TextBox();
+            this.DeleteRetirement = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.GetAllBtn = new System.Windows.Forms.Button();
@@ -44,6 +44,7 @@
             this.First_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Surname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Payout = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Submit = new System.Windows.Forms.Button();
             this.persalNumberText = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,7 +56,7 @@
             this.PayOutText = new System.Windows.Forms.TextBox();
             this.SurnameText = new System.Windows.Forms.TextBox();
             this.FirstNameText = new System.Windows.Forms.TextBox();
-            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Clear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Delete
@@ -66,13 +67,14 @@
             this.Delete.TabIndex = 40;
             this.Delete.Text = "Delete";
             this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
-            // DeleteAppointment
+            // DeleteRetirement
             // 
-            this.DeleteAppointment.Location = new System.Drawing.Point(185, 481);
-            this.DeleteAppointment.Name = "DeleteAppointment";
-            this.DeleteAppointment.Size = new System.Drawing.Size(159, 20);
-            this.DeleteAppointment.TabIndex = 39;
+            this.DeleteRetirement.Location = new System.Drawing.Point(185, 481);
+            this.DeleteRetirement.Name = "DeleteRetirement";
+            this.DeleteRetirement.Size = new System.Drawing.Size(159, 20);
+            this.DeleteRetirement.TabIndex = 39;
             // 
             // label7
             // 
@@ -100,6 +102,7 @@
             this.GetAllBtn.TabIndex = 36;
             this.GetAllBtn.Text = "Get All";
             this.GetAllBtn.UseVisualStyleBackColor = true;
+            this.GetAllBtn.Click += new System.EventHandler(this.GetAllBtn_Click_1);
             // 
             // ReadSearch
             // 
@@ -109,6 +112,7 @@
             this.ReadSearch.TabIndex = 35;
             this.ReadSearch.Text = "Search";
             this.ReadSearch.UseVisualStyleBackColor = true;
+            this.ReadSearch.Click += new System.EventHandler(this.ReadSearch_Click_1);
             // 
             // PersalNumberReadtxt
             // 
@@ -184,6 +188,10 @@
             // 
             this.Payout.Text = "Payout";
             this.Payout.Width = 200;
+            // 
+            // Status
+            // 
+            this.Status.Text = "Status";
             // 
             // Submit
             // 
@@ -275,22 +283,29 @@
             this.FirstNameText.Size = new System.Drawing.Size(159, 20);
             this.FirstNameText.TabIndex = 45;
             // 
-            // Status
+            // Clear
             // 
-            this.Status.Text = "Status";
+            this.Clear.Location = new System.Drawing.Point(269, 267);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(75, 23);
+            this.Clear.TabIndex = 46;
+            this.Clear.Text = "Clear";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // RetirementUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.Clear);
             this.Controls.Add(this.FirstNameText);
             this.Controls.Add(this.SurnameText);
             this.Controls.Add(this.PayOutText);
             this.Controls.Add(this.IDText);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Delete);
-            this.Controls.Add(this.DeleteAppointment);
+            this.Controls.Add(this.DeleteRetirement);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.GetAllBtn);
@@ -317,7 +332,7 @@
         #endregion
 
         private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.TextBox DeleteAppointment;
+        private System.Windows.Forms.TextBox DeleteRetirement;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button GetAllBtn;
@@ -344,5 +359,6 @@
         private System.Windows.Forms.TextBox SurnameText;
         private System.Windows.Forms.TextBox FirstNameText;
         private System.Windows.Forms.ColumnHeader Status;
+        private System.Windows.Forms.Button Clear;
     }
 }

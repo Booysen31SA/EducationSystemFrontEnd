@@ -45,8 +45,8 @@ namespace EducationSystemFrontEnd.Requests.Appointment
             String Response = "Created";
             string Json = "{" +
             "\"appointment\":{" +
-            "\"persal_Num\"     : \""+persalNumber+"\"," +
-            "\"appointmentToSee\" : \""+appointToSee+"\"" +
+            "\"persalNumber\"     : \"" + persalNumber+"\"," +
+            "\"appointmentToSee\" : \"" + appointToSee+"\"" +
             "}," +
             "\"dateAndTime\":{" +
             "\"persal_Number\" : \"" + persalNumber + "\"," +
@@ -83,13 +83,19 @@ namespace EducationSystemFrontEnd.Requests.Appointment
                 ResponseObjGet = (HttpWebResponse)requestObjGet.GetResponse();
                 Response = getHttpResponse(ResponseObjGet);
             }
-            catch (WebException)
+            catch (WebException e)
             {
-                i++;
-                if (i == 2)
+
+                String error = e.ToString();
+                if (error.Contains("The remote server returned an error: (500) Internal Server Error"))
                 {
-                    MessageBox.Show("unauthorized, No access allowed");
+                    MessageBox.Show("User Dont Exist");
                 }
+                else if (error.Contains("The remote server returned an error: (403) Forbidden"))
+                {
+                    MessageBox.Show("unauthorized Access, You Do not have the Required Permission");
+                }
+
             }
             return Response;
         }
@@ -108,13 +114,19 @@ namespace EducationSystemFrontEnd.Requests.Appointment
                 ResponseObjGet = (HttpWebResponse)requestObjGet.GetResponse();
                 Response = getHttpResponse(ResponseObjGet);
             }
-            catch (WebException)
+            catch (WebException e)
             {
-                i++;
-                if (i == 2)
+
+                String error = e.ToString();
+                if (error.Contains("The remote server returned an error: (500) Internal Server Error"))
                 {
-                    MessageBox.Show("unauthorized, No access allowed");
+                    MessageBox.Show("User Dont Exist");
                 }
+                else if (error.Contains("The remote server returned an error: (403) Forbidden"))
+                {
+                    MessageBox.Show("unauthorized Access, You Do not have the Required Permission");
+                }
+
             }
             return Response;
         }

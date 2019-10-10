@@ -23,6 +23,7 @@ namespace EducationSystemFrontEnd
         private static String persal_Number;
         private static String User_Role;
         private static String password;
+        private readonly int MAX_HEIGHT;
         public EducationSystem()
         {
             InitializeComponent();
@@ -54,7 +55,6 @@ namespace EducationSystemFrontEnd
         private void TeacherPanel_Click_1(object sender, EventArgs e)
         {
             UserDisplay();
-            MessageBox.Show(this, "Teacher");
         }
 
         private void Appointment_Panel_Click(object sender, EventArgs e)
@@ -65,7 +65,6 @@ namespace EducationSystemFrontEnd
         private void Retirement_Panel_Click(object sender, EventArgs e)
         {
             RetirementDisplay();
-            MessageBox.Show(this, "Retirement");
         }
 
         private void Transfer_Panel_Click(object sender, EventArgs e)
@@ -157,5 +156,9 @@ namespace EducationSystemFrontEnd
             }
         }
 
+        private void TeacherPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -53,6 +53,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.DeleteAppointment = new System.Windows.Forms.TextBox();
             this.Delete = new System.Windows.Forms.Button();
+            this.ClearBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -265,11 +266,22 @@
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
+            // ClearBtn
+            // 
+            this.ClearBtn.Location = new System.Drawing.Point(286, 303);
+            this.ClearBtn.Name = "ClearBtn";
+            this.ClearBtn.Size = new System.Drawing.Size(75, 23);
+            this.ClearBtn.TabIndex = 21;
+            this.ClearBtn.Text = "Clear";
+            this.ClearBtn.UseVisualStyleBackColor = true;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
+            // 
             // AppointmentUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.ClearBtn);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.DeleteAppointment);
             this.Controls.Add(this.label7);
@@ -324,5 +336,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox DeleteAppointment;
         private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.Button ClearBtn;
     }
 }

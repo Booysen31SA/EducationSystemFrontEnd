@@ -53,6 +53,9 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                     if (response != null)
                     {
                         RootObject appointment = JsonConvert.DeserializeObject<RootObject>(response);
+                        AppointmentToSeeText.Text = "";
+                        ReasonText.Text = "";
+
                         GetAll();
                     }
                 }
@@ -65,6 +68,8 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                 if (response != null)
                 {
                     RootObject appointment = JsonConvert.DeserializeObject<RootObject>(response);
+                    AppointmentToSeeText.Text = "";
+                    ReasonText.Text = "";
                     GetAll();
                 }
             }
@@ -125,6 +130,9 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                                                                 date,
                                                                 time,
                                                                 reason }));
+            AppointmentToSeeText.Text = pNumber;
+            ReasonText.Text = reason;
+            DeleteAppointment.Text = pNumber;
         }
         private void ReadSearch_Click(object sender, EventArgs e)
         {
@@ -192,6 +200,12 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                     MessageBox.Show("Unable to Delete, can Only delete your own Appointment");
                 }
             }
+        }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            AppointmentToSeeText.Text = "";
+            ReasonText.Text = "";
         }
     }
 }

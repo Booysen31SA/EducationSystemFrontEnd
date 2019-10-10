@@ -124,6 +124,7 @@
             this.TeacherPanel.Size = new System.Drawing.Size(200, 74);
             this.TeacherPanel.TabIndex = 0;
             this.TeacherPanel.Click += new System.EventHandler(this.TeacherPanel_Click_1);
+            this.TeacherPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.TeacherPanel_Paint);
             // 
             // label2
             // 
