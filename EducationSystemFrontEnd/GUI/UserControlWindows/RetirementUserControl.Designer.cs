@@ -90,9 +90,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(38, 422);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 13);
+            this.label6.Size = new System.Drawing.Size(125, 13);
             this.label6.TabIndex = 37;
-            this.label6.Text = "Delete Appointment";
+            this.label6.Text = "Delete retirement request";
             // 
             // GetAllBtn
             // 

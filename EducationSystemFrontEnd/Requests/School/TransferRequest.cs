@@ -22,7 +22,7 @@ namespace EducationSystemFrontEnd.Requests.School
             try
             {
 
-                WebRequest requestObjGet = WebRequest.Create(TransferURL + "/getall/" + get);
+                WebRequest requestObjGet = WebRequest.Create(TransferURL + "/getall" + get);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential("admin", "password");
                 HttpWebResponse ResponseObjGet = null;
