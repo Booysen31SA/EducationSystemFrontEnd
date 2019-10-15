@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.Clear = new System.Windows.Forms.Button();
-            this.FirstNameText = new System.Windows.Forms.TextBox();
-            this.SurnameText = new System.Windows.Forms.TextBox();
-            this.IDText = new System.Windows.Forms.TextBox();
+            this.NewSchoolText = new System.Windows.Forms.TextBox();
+            this.NewSalaryText = new System.Windows.Forms.TextBox();
+            this.PreviousSchoolText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Delete = new System.Windows.Forms.Button();
-            this.DeleteRetirement = new System.Windows.Forms.TextBox();
+            this.DeleteTransfer = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.GetAllBtn = new System.Windows.Forms.Button();
@@ -68,26 +68,26 @@
             this.Clear.UseVisualStyleBackColor = true;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
-            // FirstNameText
+            // NewSchoolText
             // 
-            this.FirstNameText.Location = new System.Drawing.Point(185, 170);
-            this.FirstNameText.Name = "FirstNameText";
-            this.FirstNameText.Size = new System.Drawing.Size(159, 20);
-            this.FirstNameText.TabIndex = 68;
+            this.NewSchoolText.Location = new System.Drawing.Point(185, 170);
+            this.NewSchoolText.Name = "NewSchoolText";
+            this.NewSchoolText.Size = new System.Drawing.Size(159, 20);
+            this.NewSchoolText.TabIndex = 68;
             // 
-            // SurnameText
+            // NewSalaryText
             // 
-            this.SurnameText.Location = new System.Drawing.Point(185, 201);
-            this.SurnameText.Name = "SurnameText";
-            this.SurnameText.Size = new System.Drawing.Size(159, 20);
-            this.SurnameText.TabIndex = 67;
+            this.NewSalaryText.Location = new System.Drawing.Point(185, 201);
+            this.NewSalaryText.Name = "NewSalaryText";
+            this.NewSalaryText.Size = new System.Drawing.Size(159, 20);
+            this.NewSalaryText.TabIndex = 67;
             // 
-            // IDText
+            // PreviousSchoolText
             // 
-            this.IDText.Location = new System.Drawing.Point(185, 141);
-            this.IDText.Name = "IDText";
-            this.IDText.Size = new System.Drawing.Size(159, 20);
-            this.IDText.TabIndex = 65;
+            this.PreviousSchoolText.Location = new System.Drawing.Point(185, 141);
+            this.PreviousSchoolText.Name = "PreviousSchoolText";
+            this.PreviousSchoolText.Size = new System.Drawing.Size(159, 20);
+            this.PreviousSchoolText.TabIndex = 65;
             // 
             // label2
             // 
@@ -108,12 +108,12 @@
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
-            // DeleteRetirement
+            // DeleteTransfer
             // 
-            this.DeleteRetirement.Location = new System.Drawing.Point(185, 448);
-            this.DeleteRetirement.Name = "DeleteRetirement";
-            this.DeleteRetirement.Size = new System.Drawing.Size(159, 20);
-            this.DeleteRetirement.TabIndex = 62;
+            this.DeleteTransfer.Location = new System.Drawing.Point(185, 448);
+            this.DeleteTransfer.Name = "DeleteTransfer";
+            this.DeleteTransfer.Size = new System.Drawing.Size(159, 20);
+            this.DeleteTransfer.TabIndex = 62;
             // 
             // label7
             // 
@@ -285,6 +285,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Approved",
+            "Pending",
             "Declined"});
             this.comboBox1.Location = new System.Drawing.Point(185, 228);
             this.comboBox1.Name = "comboBox1";
@@ -298,12 +299,12 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Clear);
-            this.Controls.Add(this.FirstNameText);
-            this.Controls.Add(this.SurnameText);
-            this.Controls.Add(this.IDText);
+            this.Controls.Add(this.NewSchoolText);
+            this.Controls.Add(this.NewSalaryText);
+            this.Controls.Add(this.PreviousSchoolText);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Delete);
-            this.Controls.Add(this.DeleteRetirement);
+            this.Controls.Add(this.DeleteTransfer);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.GetAllBtn);
@@ -330,12 +331,12 @@
         #endregion
 
         private System.Windows.Forms.Button Clear;
-        private System.Windows.Forms.TextBox FirstNameText;
-        private System.Windows.Forms.TextBox SurnameText;
-        private System.Windows.Forms.TextBox IDText;
+        private System.Windows.Forms.TextBox NewSchoolText;
+        private System.Windows.Forms.TextBox NewSalaryText;
+        private System.Windows.Forms.TextBox PreviousSchoolText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.TextBox DeleteRetirement;
+        private System.Windows.Forms.TextBox DeleteTransfer;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button GetAllBtn;
