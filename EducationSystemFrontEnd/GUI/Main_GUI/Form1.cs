@@ -33,11 +33,6 @@ namespace EducationSystemFrontEnd
         private void EducationSystem_Load(object sender, EventArgs e)
         {
             CredentialCheck();
-            UserDisplay();
-            AppointmentDisplay();
-            RetirementDisplay();
-            TransferDisplay();
-            BlankDisplay();
         }
         public String getPassword()
         {

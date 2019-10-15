@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd.Requests.Login
 {
@@ -15,13 +16,24 @@ namespace EducationSystemFrontEnd.Requests.Login
         public String CredentialCheck(String persalNumber)
         {
             String Response = null;
-
-            WebRequest requestObjGet = WebRequest.Create(LOGINURL + "/getRole/"+persalNumber);
-            requestObjGet.Method = "GET";
-            requestObjGet.Credentials = new NetworkCredential("admin", "password");
-            HttpWebResponse ResponseObjGet = null;
-            ResponseObjGet = (HttpWebResponse)requestObjGet.GetResponse();
-            Response = getHttpResponse(ResponseObjGet);
+            try
+            {
+                WebRequest requestObjGet = WebRequest.Create(LOGINURL + "/getRole/" + persalNumber);
+                requestObjGet.Method = "GET";
+                requestObjGet.Credentials = new NetworkCredential("admin", "password");
+                HttpWebResponse ResponseObjGet = null;
+                ResponseObjGet = (HttpWebResponse)requestObjGet.GetResponse();
+                Response = getHttpResponse(ResponseObjGet);
+            }
+            catch (Exception e)
+            {
+                String error = Convert.ToString(e);
+                if(error.Contains("Unable to connect to the remote server"))
+                {
+                    MessageBox.Show("Server Seems to be down, Please Try again later", "Server Down");
+                }
+            }
+            
             return Response;
 
         }

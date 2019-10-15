@@ -33,19 +33,26 @@ namespace EducationSystemFrontEnd.GUI.LoginForm
 
         private void CredCheck(String userJson)
         {
-            LoginObj loginCredential = JsonConvert.DeserializeObject<LoginObj>(userJson);
-            String pumber = loginCredential.Persal_Number;
-            String role = loginCredential.UserRole;
-            String pword = loginCredential.UserPassword;
-            if (pumber == PersalNumberTextBox.Text && pword == passwordTextBox.Text)
+            if(userJson == null)
             {
-                EducationSystem educationSystem = new EducationSystem();
-                educationSystem.updateCred(pumber, role, pword);
-                this.Close();
+
             }
             else
             {
-                MessageBox.Show(this, "Incorrect Details");
+                LoginObj loginCredential = JsonConvert.DeserializeObject<LoginObj>(userJson);
+                String pumber = loginCredential.Persal_Number;
+                String role = loginCredential.UserRole;
+                String pword = loginCredential.UserPassword;
+                if (pumber == PersalNumberTextBox.Text && pword == passwordTextBox.Text)
+                {
+                    EducationSystem educationSystem = new EducationSystem();
+                    educationSystem.updateCred(pumber, role, pword);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show(this, "Incorrect Details");
+                }
             }
         }
     }
