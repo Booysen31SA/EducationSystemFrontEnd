@@ -180,11 +180,13 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                     if (DeleteAppointment.Text == unae)
                     {
                         String response = appointmentRequest.DeleteAppointment(DeleteAppointment.Text, Education.getRole());
+                        DeleteAppointment.Text = "";
                         GetAll();
                     }
                     else
                     {
                         MessageBox.Show("Unable to Delete, can Only delete your own Appointment");
+                        DeleteAppointment.Text = "";
                     }
                 }
             }
@@ -193,11 +195,13 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                 if (DeleteAppointment.Text == unae)
                 {
                     String response = appointmentRequest.DeleteAppointment(DeleteAppointment.Text, Education.getRole());
+                    DeleteAppointment.Text = "";
                     GetAll();
                 }
                 else
                 {
                     MessageBox.Show("Unable to Delete, can Only delete your own Appointment");
+                    DeleteAppointment.Text = "";
                 }
             }
         }
