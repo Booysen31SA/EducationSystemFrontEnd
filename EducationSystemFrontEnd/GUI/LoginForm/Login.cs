@@ -19,9 +19,13 @@ namespace EducationSystemFrontEnd.GUI.LoginForm
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            LoginRequest loginRequest = new LoginRequest();
-            String user = loginRequest.CredentialCheck(PersalNumberTextBox.Text);
-            CredCheck(user);
+            if (PersalNumberTextBox.Text.Length > 0 && passwordTextBox.Text.Length > 0)
+            {
+                LoginRequest loginRequest = new LoginRequest();
+                String user = loginRequest.CredentialCheck(PersalNumberTextBox.Text);
+                CredCheck(user);
+            }
+            else { MessageBox.Show("Please Fill in the required fields", "Not enough Information"); }
         }
 
         private void CredCheck(String userJson)
