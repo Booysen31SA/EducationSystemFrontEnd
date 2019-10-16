@@ -1,6 +1,6 @@
 ﻿namespace EducationSystemFrontEnd
 {
-    partial class Form1
+    partial class EducationSystem
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Logout = new System.Windows.Forms.Label();
             this.Transfer_Panel = new System.Windows.Forms.Panel();
             this.Transfer = new System.Windows.Forms.Label();
             this.Retirement_Panel = new System.Windows.Forms.Panel();
@@ -38,8 +40,9 @@
             this.TeacherPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.ContentPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.Transfer_Panel.SuspendLayout();
             this.Retirement_Panel.SuspendLayout();
             this.Appointment_Panel.SuspendLayout();
@@ -49,14 +52,34 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.Transfer_Panel);
             this.panel1.Controls.Add(this.Retirement_Panel);
             this.panel1.Controls.Add(this.Appointment_Panel);
             this.panel1.Controls.Add(this.TeacherPanel);
             this.panel1.Location = new System.Drawing.Point(12, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 530);
+            this.panel1.Size = new System.Drawing.Size(200, 705);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.Logout);
+            this.panel2.Location = new System.Drawing.Point(0, 320);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 74);
+            this.panel2.TabIndex = 3;
+            this.panel2.Click += new System.EventHandler(this.panel2_Click);
+            // 
+            // Logout
+            // 
+            this.Logout.AutoSize = true;
+            this.Logout.Location = new System.Drawing.Point(71, 31);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(40, 13);
+            this.Logout.TabIndex = 0;
+            this.Logout.Text = "Logout";
             // 
             // Transfer_Panel
             // 
@@ -144,25 +167,29 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Welcome to the Education System";
             // 
-            // panel2
+            // ContentPanel
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Location = new System.Drawing.Point(230, 60);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(919, 530);
-            this.panel2.TabIndex = 2;
+            this.ContentPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ContentPanel.Location = new System.Drawing.Point(230, 60);
+            this.ContentPanel.Name = "ContentPanel";
+            this.ContentPanel.Size = new System.Drawing.Size(1124, 705);
+            this.ContentPanel.TabIndex = 2;
             // 
-            // Form1
+            // EducationSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1186, 602);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1366, 777);
+            this.Controls.Add(this.ContentPanel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "EducationSystem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Education System";
+            this.Load += new System.EventHandler(this.EducationSystem_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.Transfer_Panel.ResumeLayout(false);
             this.Transfer_Panel.PerformLayout();
             this.Retirement_Panel.ResumeLayout(false);
@@ -188,7 +215,9 @@
         private System.Windows.Forms.Panel Appointment_Panel;
         private System.Windows.Forms.Label Appointment;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel ContentPanel;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label Logout;
     }
 }
 
