@@ -1,19 +1,6 @@
 ﻿using EducationSystemFrontEnd.GUI.LoginForm;
 using EducationSystemFrontEnd.GUI.UserControlWindows;
-using EducationSystemFrontEnd.Requests.Appointment;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd
@@ -151,9 +138,18 @@ namespace EducationSystemFrontEnd
             }
         }
 
-        private void TeacherPanel_Paint(object sender, PaintEventArgs e)
+        private void panel2_Click(object sender, EventArgs e)
         {
-
+            BlankDisplay();
+            persal_Number = null;
+            User_Role = null;
+            password = null;
+         //   if (true && (components != null))
+           // {
+             //   components.Dispose();
+            //}
+            //base.Dispose(true);
         }
+
     }
 }

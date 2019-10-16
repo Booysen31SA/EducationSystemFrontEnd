@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using EducationSystemFrontEnd.Requests.Appointment;
+﻿using EducationSystemFrontEnd.Requests.Appointment;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd.GUI.UserControlWindows
 {
@@ -40,13 +35,13 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            
+
             String unae = Education.getUserName();
-            if(unae == null)
+            if (unae == null)
             {
                 Education.CredentialCheck();
                 unae = Education.getUserName();
-                if(unae != null)
+                if (unae != null)
                 {
                     String response = appointmentRequest.CreateAppointment(Education.getUserName(), AppointmentToSeeText.Text, getDate(), getTime(), ReasonText.Text, Education.getRole());
 
@@ -73,7 +68,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                     GetAll();
                 }
             }
-            
+
         }
 
         public void GetAll()
@@ -84,7 +79,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
             String ReasonResponse = appointmentRequest.GetAllAppointments("reason");
             listView1.View = View.Details;
 
-           
+
             listView1.GridLines = true;
             if (Appointmentresponse != null)
             {
@@ -94,12 +89,12 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
 
                 foreach (AppointmentObj pl in AppointmentCollection)
                 {
-                    int indexDateAndTime = DateAndTimeCollection.FindIndex(delegate(DateAndTimeObj i) { return i.persal_Number.Equals(pl.PersalNumber); });
+                    int indexDateAndTime = DateAndTimeCollection.FindIndex(delegate (DateAndTimeObj i) { return i.persal_Number.Equals(pl.PersalNumber); });
                     int indexReason = ReasonCollection.FindIndex(delegate (ReasonObj i) { return i.persal_Number.Equals(pl.PersalNumber); });
                     String date = DateAndTimeCollection.ElementAt(indexDateAndTime).date;
                     String time = DateAndTimeCollection.ElementAt(indexDateAndTime).time;
                     String reason = ReasonCollection.ElementAt(indexDateAndTime).reason;
-                    listView1.Items.Add(new ListViewItem(new string[] { pl.PersalNumber, pl.AppointmentToSee, date, time, reason}));
+                    listView1.Items.Add(new ListViewItem(new string[] { pl.PersalNumber, pl.AppointmentToSee, date, time, reason }));
 
                 }
             }

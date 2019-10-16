@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Logout = new System.Windows.Forms.Label();
             this.Transfer_Panel = new System.Windows.Forms.Panel();
             this.Transfer = new System.Windows.Forms.Label();
             this.Retirement_Panel = new System.Windows.Forms.Panel();
@@ -40,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ContentPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.Transfer_Panel.SuspendLayout();
             this.Retirement_Panel.SuspendLayout();
             this.Appointment_Panel.SuspendLayout();
@@ -49,6 +52,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.Transfer_Panel);
             this.panel1.Controls.Add(this.Retirement_Panel);
             this.panel1.Controls.Add(this.Appointment_Panel);
@@ -57,6 +61,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 705);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.Logout);
+            this.panel2.Location = new System.Drawing.Point(0, 320);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 74);
+            this.panel2.TabIndex = 3;
+            this.panel2.Click += new System.EventHandler(this.panel2_Click);
+            // 
+            // Logout
+            // 
+            this.Logout.AutoSize = true;
+            this.Logout.Location = new System.Drawing.Point(71, 31);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(40, 13);
+            this.Logout.TabIndex = 0;
+            this.Logout.Text = "Logout";
             // 
             // Transfer_Panel
             // 
@@ -124,7 +147,6 @@
             this.TeacherPanel.Size = new System.Drawing.Size(200, 74);
             this.TeacherPanel.TabIndex = 0;
             this.TeacherPanel.Click += new System.EventHandler(this.TeacherPanel_Click_1);
-            this.TeacherPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.TeacherPanel_Paint);
             // 
             // label2
             // 
@@ -166,6 +188,8 @@
             this.Text = "Education System";
             this.Load += new System.EventHandler(this.EducationSystem_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.Transfer_Panel.ResumeLayout(false);
             this.Transfer_Panel.PerformLayout();
             this.Retirement_Panel.ResumeLayout(false);
@@ -192,6 +216,8 @@
         private System.Windows.Forms.Label Appointment;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel ContentPanel;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label Logout;
     }
 }
 

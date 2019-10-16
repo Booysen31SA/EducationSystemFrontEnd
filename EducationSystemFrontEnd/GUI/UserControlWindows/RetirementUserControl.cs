@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using EducationSystemFrontEnd.Requests.Retirement;
+﻿using EducationSystemFrontEnd.Requests.Retirement;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd.GUI.UserControlWindows
 {
@@ -179,9 +174,9 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
             }
             else
             {
-                    String response = retirementRequest.DeleteAppointment(DeleteRetirement.Text, Education.getRole());
-                    GetAll();
-                
+                String response = retirementRequest.DeleteAppointment(DeleteRetirement.Text, Education.getRole());
+                GetAll();
+
             }
         }
 

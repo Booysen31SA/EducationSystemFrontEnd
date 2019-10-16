@@ -109,8 +109,10 @@
     </Compile>
     <Compile Include="Requests\Appointment\AppointmentObj.cs" />
     <Compile Include="Requests\Appointment\AppointmentRequest.cs" />
+    <Compile Include="Requests\Gender\GenderFill.cs" />
     <Compile Include="Requests\Login\LoginObj.cs" />
     <Compile Include="Requests\Login\LoginRequest.cs" />
+    <Compile Include="Requests\Race\RaceFill.cs" />
     <Compile Include="Requests\Retirement\RetirementObj.cs" />
     <Compile Include="Requests\Retirement\RetirementRequest.cs" />
     <Compile Include="Requests\School\TransferRequest.cs" />

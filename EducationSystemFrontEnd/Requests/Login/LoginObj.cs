@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EducationSystemFrontEnd.Requests.Login
 {
@@ -16,5 +12,5 @@ namespace EducationSystemFrontEnd.Requests.Login
         public string UserRole { get => userRole; set => userRole = value; }
         public string UserPassword { get => userPassword; set => userPassword = value; }
     }
-  
-    }
+
+}

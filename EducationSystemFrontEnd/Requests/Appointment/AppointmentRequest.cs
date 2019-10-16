@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd.Requests.Appointment
@@ -18,13 +14,13 @@ namespace EducationSystemFrontEnd.Requests.Appointment
         public String GetAllAppointments(String get)
         {
             String Response = null;
-           
+
             try
             {
-                
+
                 WebRequest requestObjGet = WebRequest.Create(AppointmentURL + "/getall/" + get);
                 requestObjGet.Method = "GET";
-                requestObjGet.Credentials = new NetworkCredential("admin","password");
+                requestObjGet.Credentials = new NetworkCredential("admin", "password");
                 HttpWebResponse ResponseObjGet = null;
                 ResponseObjGet = (HttpWebResponse)requestObjGet.GetResponse();
                 Response = getHttpResponse(ResponseObjGet);
@@ -32,21 +28,21 @@ namespace EducationSystemFrontEnd.Requests.Appointment
             catch (WebException)
             {
                 i++;
-                if(i == 2)
+                if (i == 2)
                 {
                     MessageBox.Show("unauthorized, No access allowed");
                 }
             }
             return Response;
         }
-     public string CreateAppointment(String persalNumber, String appointToSee, String date,String time, String reason, String role)
+        public string CreateAppointment(String persalNumber, String appointToSee, String date, String time, String reason, String role)
         {
-            
+
             String Response = "Created";
             string Json = "{" +
             "\"appointment\":{" +
-            "\"persalNumber\"     : \"" + persalNumber+"\"," +
-            "\"appointmentToSee\" : \"" + appointToSee+"\"" +
+            "\"persalNumber\"     : \"" + persalNumber + "\"," +
+            "\"appointmentToSee\" : \"" + appointToSee + "\"" +
             "}," +
             "\"dateAndTime\":{" +
             "\"persal_Number\" : \"" + persalNumber + "\"," +
@@ -59,7 +55,7 @@ namespace EducationSystemFrontEnd.Requests.Appointment
             "}" +
             "}"
             ;
-            WebRequest requestObjPost = WebRequest.Create(AppointmentURL+"/create");
+            WebRequest requestObjPost = WebRequest.Create(AppointmentURL + "/create");
             requestObjPost.Method = "POST";
             requestObjPost.ContentType = "application/json";
 
@@ -154,15 +150,15 @@ namespace EducationSystemFrontEnd.Requests.Appointment
         private String getHttpResponse(HttpWebResponse httpResponse)
         {
             String ReturnResponse = null;
-           if(httpResponse != null)
+            if (httpResponse != null)
             {
-               using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
                     ReturnResponse = streamReader.ReadToEnd();
                     streamReader.Close();
                 }
             }
-            else{ }
+            else { }
 
             return ReturnResponse;
         }

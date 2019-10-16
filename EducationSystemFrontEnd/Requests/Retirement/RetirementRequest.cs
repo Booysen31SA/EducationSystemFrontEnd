@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd.Requests.Retirement
@@ -83,16 +79,17 @@ namespace EducationSystemFrontEnd.Requests.Retirement
             }
             catch (WebException e)
             {
-                
+
                 String error = e.ToString();
                 if (error.Contains("The remote server returned an error: (500) Internal Server Error"))
                 {
                     MessageBox.Show("User Dont Exist");
-                }else if (error.Contains("The remote server returned an error: (403) Forbidden"))
+                }
+                else if (error.Contains("The remote server returned an error: (403) Forbidden"))
                 {
                     MessageBox.Show("unauthorized Access, You Do not have the Required Permission");
                 }
-               
+
             }
             return Response;
         }
@@ -128,7 +125,7 @@ namespace EducationSystemFrontEnd.Requests.Retirement
             return Response;
         }
 
-            private HttpWebResponse sendResponse(WebRequest sendHttpResponse, String JsonData)
+        private HttpWebResponse sendResponse(WebRequest sendHttpResponse, String JsonData)
         {
             HttpWebResponse httpResponse = null;
             try

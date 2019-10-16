@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd.Requests.School
@@ -39,7 +35,7 @@ namespace EducationSystemFrontEnd.Requests.School
             }
             return Response;
         }
-        public string CreateRetirement(String persalNumber, String previousSchool, String SchoolName,int  payout, String request, String role)
+        public string CreateRetirement(String persalNumber, String previousSchool, String SchoolName, int payout, String request, String role)
         {
 
             String Response = "Created";

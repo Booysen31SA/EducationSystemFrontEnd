@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd.Requests.Login
@@ -28,12 +24,12 @@ namespace EducationSystemFrontEnd.Requests.Login
             catch (Exception e)
             {
                 String error = Convert.ToString(e);
-                if(error.Contains("Unable to connect to the remote server"))
+                if (error.Contains("Unable to connect to the remote server"))
                 {
                     MessageBox.Show("Server Seems to be down, Please Try again later", "Server Down");
                 }
             }
-            
+
             return Response;
 
         }
