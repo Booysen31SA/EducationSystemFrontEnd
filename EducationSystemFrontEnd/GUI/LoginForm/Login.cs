@@ -48,7 +48,7 @@ namespace EducationSystemFrontEnd.GUI.LoginForm
                 }
                 else
                 {
-                    MessageBox.Show(this, "Incorrect Details");
+                    MessageBox.Show(this, "Incorrect Details, Please Contact ADMIN", "Invaild details");
                 }
             }
         }
