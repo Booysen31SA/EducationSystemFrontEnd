@@ -260,5 +260,27 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
             GenderBox.Text = gender;
             RaceBox.Text = race;
         }
+
+        private void PhyicalAddressText_TextChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                PostalAddressText.Enabled = false;
+                PostalAddressText.Text = PhyicalAddressText.Text;
+            }
+            else
+            {
+                PostalAddressText.Enabled = true;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                PostalAddressText.Enabled = false;
+            }
+            else { PostalAddressText.Enabled = true; }
+        }
     }
 }
