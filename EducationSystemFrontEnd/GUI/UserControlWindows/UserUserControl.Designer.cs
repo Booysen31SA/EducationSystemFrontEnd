@@ -71,6 +71,7 @@
             this.RaceBox = new System.Windows.Forms.ComboBox();
             this.UserRoleBox = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // Clear
@@ -78,7 +79,7 @@
             this.Clear.Location = new System.Drawing.Point(269, 419);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(75, 23);
-            this.Clear.TabIndex = 92;
+            this.Clear.TabIndex = 11;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = true;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
@@ -88,21 +89,21 @@
             this.FirstNameText.Location = new System.Drawing.Point(185, 162);
             this.FirstNameText.Name = "FirstNameText";
             this.FirstNameText.Size = new System.Drawing.Size(159, 20);
-            this.FirstNameText.TabIndex = 91;
+            this.FirstNameText.TabIndex = 2;
             // 
             // LastNameText
             // 
             this.LastNameText.Location = new System.Drawing.Point(185, 188);
             this.LastNameText.Name = "LastNameText";
             this.LastNameText.Size = new System.Drawing.Size(159, 20);
-            this.LastNameText.TabIndex = 90;
+            this.LastNameText.TabIndex = 3;
             // 
             // IDText
             // 
             this.IDText.Location = new System.Drawing.Point(185, 136);
             this.IDText.Name = "IDText";
             this.IDText.Size = new System.Drawing.Size(159, 20);
-            this.IDText.TabIndex = 89;
+            this.IDText.TabIndex = 1;
             // 
             // label2
             // 
@@ -118,7 +119,7 @@
             this.Delete.Location = new System.Drawing.Point(185, 622);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(75, 23);
-            this.Delete.TabIndex = 87;
+            this.Delete.TabIndex = 16;
             this.Delete.Text = "Delete";
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
@@ -128,7 +129,7 @@
             this.DeleteUser.Location = new System.Drawing.Point(185, 596);
             this.DeleteUser.Name = "DeleteUser";
             this.DeleteUser.Size = new System.Drawing.Size(159, 20);
-            this.DeleteUser.TabIndex = 86;
+            this.DeleteUser.TabIndex = 15;
             // 
             // label7
             // 
@@ -153,7 +154,7 @@
             this.GetAllBtn.Location = new System.Drawing.Point(269, 522);
             this.GetAllBtn.Name = "GetAllBtn";
             this.GetAllBtn.Size = new System.Drawing.Size(75, 23);
-            this.GetAllBtn.TabIndex = 83;
+            this.GetAllBtn.TabIndex = 14;
             this.GetAllBtn.Text = "Get All";
             this.GetAllBtn.UseVisualStyleBackColor = true;
             this.GetAllBtn.Click += new System.EventHandler(this.GetAllBtn_Click);
@@ -163,7 +164,7 @@
             this.ReadSearch.Location = new System.Drawing.Point(185, 522);
             this.ReadSearch.Name = "ReadSearch";
             this.ReadSearch.Size = new System.Drawing.Size(75, 23);
-            this.ReadSearch.TabIndex = 82;
+            this.ReadSearch.TabIndex = 13;
             this.ReadSearch.Text = "Search";
             this.ReadSearch.UseVisualStyleBackColor = true;
             this.ReadSearch.Click += new System.EventHandler(this.ReadSearch_Click);
@@ -173,7 +174,7 @@
             this.PersalNumberReadtxt.Location = new System.Drawing.Point(185, 496);
             this.PersalNumberReadtxt.Name = "PersalNumberReadtxt";
             this.PersalNumberReadtxt.Size = new System.Drawing.Size(159, 20);
-            this.PersalNumberReadtxt.TabIndex = 81;
+            this.PersalNumberReadtxt.TabIndex = 12;
             // 
             // label4
             // 
@@ -271,7 +272,7 @@
             this.Submit.Location = new System.Drawing.Point(185, 419);
             this.Submit.Name = "Submit";
             this.Submit.Size = new System.Drawing.Size(75, 23);
-            this.Submit.TabIndex = 76;
+            this.Submit.TabIndex = 10;
             this.Submit.Text = "Submit";
             this.Submit.UseVisualStyleBackColor = true;
             this.Submit.Click += new System.EventHandler(this.Submit_Click);
@@ -281,7 +282,7 @@
             this.persalNumberText.Location = new System.Drawing.Point(185, 110);
             this.persalNumberText.Name = "persalNumberText";
             this.persalNumberText.Size = new System.Drawing.Size(159, 20);
-            this.persalNumberText.TabIndex = 75;
+            this.persalNumberText.TabIndex = 0;
             // 
             // label8
             // 
@@ -324,14 +325,15 @@
             this.PhyicalAddressText.Location = new System.Drawing.Point(185, 240);
             this.PhyicalAddressText.Name = "PhyicalAddressText";
             this.PhyicalAddressText.Size = new System.Drawing.Size(159, 20);
-            this.PhyicalAddressText.TabIndex = 93;
+            this.PhyicalAddressText.TabIndex = 4;
+            this.PhyicalAddressText.TextChanged += new System.EventHandler(this.PhyicalAddressText_TextChanged);
             // 
             // PostalAddressText
             // 
             this.PostalAddressText.Location = new System.Drawing.Point(185, 266);
             this.PostalAddressText.Name = "PostalAddressText";
             this.PostalAddressText.Size = new System.Drawing.Size(159, 20);
-            this.PostalAddressText.TabIndex = 94;
+            this.PostalAddressText.TabIndex = 5;
             // 
             // label1
             // 
@@ -397,7 +399,7 @@
             this.GenderBox.Location = new System.Drawing.Point(185, 338);
             this.GenderBox.Name = "GenderBox";
             this.GenderBox.Size = new System.Drawing.Size(159, 21);
-            this.GenderBox.TabIndex = 101;
+            this.GenderBox.TabIndex = 7;
             // 
             // RaceBox
             // 
@@ -411,7 +413,7 @@
             this.RaceBox.Location = new System.Drawing.Point(185, 365);
             this.RaceBox.Name = "RaceBox";
             this.RaceBox.Size = new System.Drawing.Size(159, 21);
-            this.RaceBox.TabIndex = 102;
+            this.RaceBox.TabIndex = 8;
             // 
             // UserRoleBox
             // 
@@ -423,7 +425,7 @@
             this.UserRoleBox.Location = new System.Drawing.Point(185, 392);
             this.UserRoleBox.Name = "UserRoleBox";
             this.UserRoleBox.Size = new System.Drawing.Size(159, 21);
-            this.UserRoleBox.TabIndex = 103;
+            this.UserRoleBox.TabIndex = 9;
             // 
             // dateTimePicker1
             // 
@@ -432,13 +434,24 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(185, 312);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(159, 20);
-            this.dateTimePicker1.TabIndex = 104;
+            this.dateTimePicker1.TabIndex = 6;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(65, 273);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 105;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // UserUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.UserRoleBox);
             this.Controls.Add(this.RaceBox);
@@ -525,5 +538,6 @@
         private System.Windows.Forms.ComboBox RaceBox;
         private System.Windows.Forms.ComboBox UserRoleBox;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
