@@ -36,12 +36,33 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
         private void Button1_Click(object sender, EventArgs e)
         {
 
-            String unae = Education.getUserName();
-            if (unae == null)
+            if (AppointmentToSeeText.Text.Length <= 0 || ReasonText.Text.Length <= 0)
             {
-                Education.CredentialCheck();
-                unae = Education.getUserName();
-                if (unae != null)
+                MessageBox.Show(this, "Please Fill in the correct details", "Incorrect details");
+            }
+            else
+            {
+                String unae = Education.getUserName();
+                if (unae == null)
+                {
+                    Education.CredentialCheck();
+                    unae = Education.getUserName();
+                    if (unae != null)
+                    {
+                        String response = appointmentRequest.CreateAppointment(Education.getUserName(), AppointmentToSeeText.Text, getDate(), getTime(), ReasonText.Text, Education.getRole());
+
+                        if (response != null)
+                        {
+                            RootObject appointment = JsonConvert.DeserializeObject<RootObject>(response);
+                            AppointmentToSeeText.Text = "";
+                            ReasonText.Text = "";
+
+                            GetAll();
+                        }
+                    }
+
+                }
+                else
                 {
                     String response = appointmentRequest.CreateAppointment(Education.getUserName(), AppointmentToSeeText.Text, getDate(), getTime(), ReasonText.Text, Education.getRole());
 
@@ -50,22 +71,8 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                         RootObject appointment = JsonConvert.DeserializeObject<RootObject>(response);
                         AppointmentToSeeText.Text = "";
                         ReasonText.Text = "";
-
                         GetAll();
                     }
-                }
-
-            }
-            else
-            {
-                String response = appointmentRequest.CreateAppointment(Education.getUserName(), AppointmentToSeeText.Text, getDate(), getTime(), ReasonText.Text, Education.getRole());
-
-                if (response != null)
-                {
-                    RootObject appointment = JsonConvert.DeserializeObject<RootObject>(response);
-                    AppointmentToSeeText.Text = "";
-                    ReasonText.Text = "";
-                    GetAll();
                 }
             }
 
@@ -131,12 +138,25 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
         }
         private void ReadSearch_Click(object sender, EventArgs e)
         {
-            String unae = Education.getUserName();
-            if (unae == null)
+            if (PersalNumberReadtxt.Text.Length > 0)
             {
-                Education.CredentialCheck();
-                unae = Education.getUserName();
-                if (unae != null)
+                String unae = Education.getUserName();
+                if (unae == null)
+                {
+                    Education.CredentialCheck();
+                    unae = Education.getUserName();
+                    if (unae != null)
+                    {
+                        String response = appointmentRequest.ReadAppointment(PersalNumberReadtxt.Text, Education.getRole());
+
+                        if (response != null)
+                        {
+                            getReadObject(response);
+                        }
+                    }
+
+                }
+                else
                 {
                     String response = appointmentRequest.ReadAppointment(PersalNumberReadtxt.Text, Education.getRole());
 
@@ -145,17 +165,8 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                         getReadObject(response);
                     }
                 }
-
             }
-            else
-            {
-                String response = appointmentRequest.ReadAppointment(PersalNumberReadtxt.Text, Education.getRole());
-
-                if (response != null)
-                {
-                    getReadObject(response);
-                }
-            }
+            else { MessageBox.Show(this, "Please Fill in the correct details", "Incorrect details"); }
         }
 
         private void GetAllBtn_Click(object sender, EventArgs e)
@@ -165,12 +176,31 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            String unae = Education.getUserName();
-            if (unae == null)
+            if (DeleteAppointment.Text.Length > 0)
             {
-                Education.CredentialCheck();
-                unae = Education.getUserName();
-                if (unae != null)
+
+
+                String unae = Education.getUserName();
+                if (unae == null)
+                {
+                    Education.CredentialCheck();
+                    unae = Education.getUserName();
+                    if (unae != null)
+                    {
+                        if (DeleteAppointment.Text == unae)
+                        {
+                            String response = appointmentRequest.DeleteAppointment(DeleteAppointment.Text, Education.getRole());
+                            DeleteAppointment.Text = "";
+                            GetAll();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Unable to Delete, can Only delete your own Appointment");
+                            DeleteAppointment.Text = "";
+                        }
+                    }
+                }
+                else
                 {
                     if (DeleteAppointment.Text == unae)
                     {
@@ -185,20 +215,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                     }
                 }
             }
-            else
-            {
-                if (DeleteAppointment.Text == unae)
-                {
-                    String response = appointmentRequest.DeleteAppointment(DeleteAppointment.Text, Education.getRole());
-                    DeleteAppointment.Text = "";
-                    GetAll();
-                }
-                else
-                {
-                    MessageBox.Show("Unable to Delete, can Only delete your own Appointment");
-                    DeleteAppointment.Text = "";
-                }
-            }
+            else { MessageBox.Show(this, "Please Fill in the correct details", "Incorrect details"); }
         }
 
         private void ClearBtn_Click(object sender, EventArgs e)
