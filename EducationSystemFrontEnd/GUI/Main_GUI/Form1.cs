@@ -1,6 +1,7 @@
 ﻿using EducationSystemFrontEnd.GUI.LoginForm;
 using EducationSystemFrontEnd.GUI.UserControlWindows;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd
@@ -10,7 +11,6 @@ namespace EducationSystemFrontEnd
         private static String persal_Number;
         private static String User_Role;
         private static String password;
-        private readonly int MAX_HEIGHT;
         public EducationSystem()
         {
             InitializeComponent();
