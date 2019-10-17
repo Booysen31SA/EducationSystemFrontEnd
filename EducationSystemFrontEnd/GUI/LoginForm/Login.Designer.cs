@@ -60,28 +60,31 @@
             this.PersalNumberTextBox.Location = new System.Drawing.Point(237, 43);
             this.PersalNumberTextBox.Name = "PersalNumberTextBox";
             this.PersalNumberTextBox.Size = new System.Drawing.Size(129, 20);
-            this.PersalNumberTextBox.TabIndex = 2;
+            this.PersalNumberTextBox.TabIndex = 0;
             // 
             // passwordTextBox
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(237, 78);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(129, 20);
-            this.passwordTextBox.TabIndex = 3;
+            this.passwordTextBox.TabIndex = 1;
             this.passwordTextBox.UseSystemPasswordChar = true;
+            this.passwordTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyUp);
             // 
             // LoginBtn
             // 
+            this.LoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.LoginBtn.Location = new System.Drawing.Point(237, 119);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(75, 23);
-            this.LoginBtn.TabIndex = 4;
+            this.LoginBtn.TabIndex = 2;
             this.LoginBtn.Text = "Confirm";
             this.LoginBtn.UseVisualStyleBackColor = true;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // Login
             // 
+            this.AcceptButton = this.LoginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 182);
