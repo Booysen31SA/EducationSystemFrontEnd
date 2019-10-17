@@ -2,7 +2,7 @@
 
 namespace EducationSystemFrontEnd.Requests.Login
 {
-    class LoginObj
+    internal class LoginObj
     {
         private String persal_Number;
         private String userRole;
@@ -12,5 +12,4 @@ namespace EducationSystemFrontEnd.Requests.Login
         public string UserRole { get => userRole; set => userRole = value; }
         public string UserPassword { get => userPassword; set => userPassword = value; }
     }
-
 }

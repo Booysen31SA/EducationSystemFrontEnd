@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd.Requests.Appointment
 {
-    class AppointmentRequest
+    internal class AppointmentRequest
     {
         private readonly String AppointmentURL = "http://localhost:8080/appointment";
         private EducationSystem Education = new EducationSystem();
@@ -17,7 +17,6 @@ namespace EducationSystemFrontEnd.Requests.Appointment
 
             try
             {
-
                 WebRequest requestObjGet = WebRequest.Create(AppointmentURL + "/getall/" + get);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential("admin", "password");
@@ -35,9 +34,9 @@ namespace EducationSystemFrontEnd.Requests.Appointment
             }
             return Response;
         }
+
         public string CreateAppointment(String persalNumber, String appointToSee, String date, String time, String reason, String role)
         {
-
             String Response = "Created";
             string Json = "{" +
             "\"appointment\":{" +
@@ -71,7 +70,6 @@ namespace EducationSystemFrontEnd.Requests.Appointment
 
             try
             {
-
                 WebRequest requestObjGet = WebRequest.Create(AppointmentURL + "/read/" + get);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential(Role, Education.getPassword());
@@ -81,7 +79,6 @@ namespace EducationSystemFrontEnd.Requests.Appointment
             }
             catch (WebException e)
             {
-
                 String error = e.ToString();
                 if (error.Contains("The remote server returned an error: (500) Internal Server Error"))
                 {
@@ -91,7 +88,6 @@ namespace EducationSystemFrontEnd.Requests.Appointment
                 {
                     MessageBox.Show("unauthorized Access, You Do not have the Required Permission");
                 }
-
             }
             return Response;
         }
@@ -102,7 +98,6 @@ namespace EducationSystemFrontEnd.Requests.Appointment
 
             try
             {
-
                 WebRequest requestObjGet = WebRequest.Create(AppointmentURL + "/delete/" + get);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential(Role, Education.getPassword());
@@ -112,7 +107,6 @@ namespace EducationSystemFrontEnd.Requests.Appointment
             }
             catch (WebException e)
             {
-
                 String error = e.ToString();
                 if (error.Contains("The remote server returned an error: (500) Internal Server Error"))
                 {
@@ -122,10 +116,10 @@ namespace EducationSystemFrontEnd.Requests.Appointment
                 {
                     MessageBox.Show("unauthorized Access, You Do not have the Required Permission");
                 }
-
             }
             return Response;
         }
+
         private HttpWebResponse sendResponse(WebRequest sendHttpResponse, String JsonData)
         {
             HttpWebResponse httpResponse = null;

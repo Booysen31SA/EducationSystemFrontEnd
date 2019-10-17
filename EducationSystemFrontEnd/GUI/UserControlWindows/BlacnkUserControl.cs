@@ -6,6 +6,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
     public partial class BlacnkUserControl : UserControl
     {
         private static BlacnkUserControl _instance;
+
         public BlacnkUserControl()
         {
             InitializeComponent();
@@ -13,8 +14,8 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
 
         private void BlacnkUserControl_Load(object sender, EventArgs e)
         {
-
         }
+
         public static BlacnkUserControl Instance
         {
             get

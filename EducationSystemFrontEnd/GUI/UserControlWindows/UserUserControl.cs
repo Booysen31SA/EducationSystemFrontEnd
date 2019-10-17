@@ -12,6 +12,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
         private static UserUserControl _instance;
         private EducationSystem Education = new EducationSystem();
         private UserRequest userRequest = new UserRequest();
+
         public UserUserControl()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
         {
             GetAll();
         }
+
         public static UserUserControl Instance
         {
             get
@@ -99,7 +101,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                         getReadObject(response);
                     }
                 }
-
             }
             else
             {
@@ -111,7 +112,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                 }
             }
         }
-
 
         private void GetAllBtn_Click(object sender, EventArgs e)
         {
@@ -165,7 +165,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
             String userDemoresponse = userRequest.GetAllAppointments("userDemo");
             listView2.View = View.Details;
 
-
             listView2.GridLines = true;
             if (userresponse != null)
             {
@@ -192,7 +191,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                                                                         race
                                                                         }));
                 };
-
             }
         }
 
@@ -201,7 +199,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
             String gender = null;
             if (response == null)
             {
-
             }
             else
             {
@@ -218,11 +215,13 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
             }
             return gender;
         }
+
         private String getDate()
         {
             string theDate = dateTimePicker1.Value.ToString("dd/MMMM/yyyy");
             return theDate;
         }
+
         private void getReadObject(String response)
         {
             listView2.Items.Clear();

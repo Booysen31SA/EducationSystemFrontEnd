@@ -12,6 +12,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
         private static AppointmentUserControl _instance;
         private EducationSystem Education = new EducationSystem();
         private AppointmentRequest appointmentRequest = new AppointmentRequest();
+
         public AppointmentUserControl()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
         {
             GetAll();
         }
+
         public static AppointmentUserControl Instance
         {
             get
@@ -35,7 +37,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
             if (AppointmentToSeeText.Text.Length <= 0 || ReasonText.Text.Length <= 0)
             {
                 MessageBox.Show(this, "Please Fill in the correct details", "Incorrect details");
@@ -60,7 +61,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                             GetAll();
                         }
                     }
-
                 }
                 else
                 {
@@ -75,7 +75,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                     }
                 }
             }
-
         }
 
         public void GetAll()
@@ -85,7 +84,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
             String DateAndTimeResponse = appointmentRequest.GetAllAppointments("dateandtime"); ;
             String ReasonResponse = appointmentRequest.GetAllAppointments("reason");
             listView1.View = View.Details;
-
 
             listView1.GridLines = true;
             if (Appointmentresponse != null)
@@ -102,15 +100,16 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                     String time = DateAndTimeCollection.ElementAt(indexDateAndTime).time;
                     String reason = ReasonCollection.ElementAt(indexDateAndTime).reason;
                     listView1.Items.Add(new ListViewItem(new string[] { pl.PersalNumber, pl.AppointmentToSee, date, time, reason }));
-
                 }
             }
         }
+
         private String getDate()
         {
             string theDate = dateTimePicker1.Value.ToString("dd/MMMM/yyyy");
             return theDate;
         }
+
         private String getTime()
         {
             string theTimeH = dateTimePicker2.Value.ToString("HH");
@@ -136,6 +135,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
             ReasonText.Text = reason;
             DeleteAppointment.Text = pNumber;
         }
+
         private void ReadSearch_Click(object sender, EventArgs e)
         {
             if (PersalNumberReadtxt.Text.Length > 0)
@@ -154,7 +154,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                             getReadObject(response);
                         }
                     }
-
                 }
                 else
                 {
@@ -178,8 +177,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
         {
             if (DeleteAppointment.Text.Length > 0)
             {
-
-
                 String unae = Education.getUserName();
                 if (unae == null)
                 {

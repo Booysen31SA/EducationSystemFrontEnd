@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd.Requests.Login
 {
-    class LoginRequest
+    internal class LoginRequest
     {
         private readonly String LOGINURL = "http://localhost:8080/userRole";
 
@@ -31,8 +31,8 @@ namespace EducationSystemFrontEnd.Requests.Login
             }
 
             return Response;
-
         }
+
         private String getHttpResponse(HttpWebResponse httpResponse)
         {
             String ReturnResponse = null;
@@ -44,6 +44,5 @@ namespace EducationSystemFrontEnd.Requests.Login
 
             return ReturnResponse;
         }
-
     }
 }

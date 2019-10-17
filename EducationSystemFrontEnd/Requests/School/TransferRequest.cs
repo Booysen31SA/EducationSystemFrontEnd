@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd.Requests.School
 {
-    class TransferRequest
+    internal class TransferRequest
     {
         private readonly String TransferURL = "http://localhost:8080/transfer";
         private EducationSystem Education = new EducationSystem();
@@ -17,7 +17,6 @@ namespace EducationSystemFrontEnd.Requests.School
 
             try
             {
-
                 WebRequest requestObjGet = WebRequest.Create(TransferURL + "/getall" + get);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential("admin", "password");
@@ -35,9 +34,9 @@ namespace EducationSystemFrontEnd.Requests.School
             }
             return Response;
         }
+
         public string CreateRetirement(String persalNumber, String previousSchool, String SchoolName, int payout, String request, String role)
         {
-
             String Response = "Created";
             string Json = "{" +
             "\"transfer\":{" +
@@ -68,7 +67,6 @@ namespace EducationSystemFrontEnd.Requests.School
 
             try
             {
-
                 WebRequest requestObjGet = WebRequest.Create(TransferURL + "/read/" + get);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential(Role, Education.getPassword());
@@ -93,7 +91,6 @@ namespace EducationSystemFrontEnd.Requests.School
 
             try
             {
-
                 WebRequest requestObjGet = WebRequest.Create(TransferURL + "/delete/" + get);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential(Role, Education.getPassword());

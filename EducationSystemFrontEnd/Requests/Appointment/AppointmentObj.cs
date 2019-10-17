@@ -8,6 +8,7 @@ namespace EducationSystemFrontEnd.Requests.Appointment
         public DateAndTimeObj DateAndTime { get; set; }
         public ReasonObj Reason { get; set; }
     }
+
     public class AppointmentObj
     {
         private String persalNumber;
@@ -15,12 +16,14 @@ namespace EducationSystemFrontEnd.Requests.Appointment
         public string PersalNumber { get => persalNumber; set => persalNumber = value; }
         public string AppointmentToSee { get => appointmentToSee; set => appointmentToSee = value; }
     }
+
     public class DateAndTimeObj
     {
         public String persal_Number { get; set; }
         public String date { get; set; }
         public String time { get; set; }
     }
+
     public class ReasonObj
     {
         public String persal_Number { get; set; }

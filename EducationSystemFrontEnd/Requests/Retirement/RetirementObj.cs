@@ -2,13 +2,12 @@
 
 namespace EducationSystemFrontEnd.Requests.Retirement
 {
-
     public class RootObject
     {
         public RetirementObj retirement { get; set; }
         public StatusObj Status { get; set; }
-
     }
+
     public class RetirementObj
     {
         public String persal_Num { get; set; }
@@ -17,6 +16,7 @@ namespace EducationSystemFrontEnd.Requests.Retirement
         public String lastName { get; set; }
         public double payout { get; set; }
     }
+
     public class StatusObj
     {
         public String persal_Number { get; set; }

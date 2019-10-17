@@ -12,6 +12,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
         private static TransferUserControl _instance;
         private TransferRequest transferRequest = new TransferRequest();
         private EducationSystem Education = new EducationSystem();
+
         public TransferUserControl()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
         {
             GetAll();
         }
+
         public static TransferUserControl Instance
         {
             get
@@ -75,7 +77,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
             PreviousSchoolText.Text = "";
             NewSchoolText.Text = "";
             NewSalaryText.Text = "";
-
         }
 
         private void ReadSearch_Click(object sender, EventArgs e)
@@ -94,7 +95,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                         getReadObject(response);
                     }
                 }
-
             }
             else
             {
@@ -136,7 +136,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
             {
                 String response = transferRequest.DeleteAppointment(DeleteTransfer.Text, Education.getRole());
                 GetAll();
-
             }
         }
 
@@ -146,7 +145,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
             String Appointmentresponse = transferRequest.GetAllAppointments("Transfer");
             String DateAndTimeResponse = transferRequest.GetAllAppointments("Status");
             listView2.View = View.Details;
-
 
             listView2.GridLines = true;
             if (Appointmentresponse != null)
@@ -159,9 +157,9 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                     int indexStatus = StatusCollection.FindIndex(delegate (Status i) { return i.persal_Number.Equals(pl.persalNumber); });
                     listView2.Items.Add(new ListViewItem(new string[] { pl.persalNumber, pl.previousSchool, pl.schoolName, Convert.ToString(pl.teacherAmount), StatusCollection.ElementAt(indexStatus).statusRequest }));
                 };
-
             }
         }
+
         private void getReadObject(String response)
         {
             listView2.Items.Clear();

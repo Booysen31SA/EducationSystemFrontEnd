@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd.Requests.User
 {
-    class UserRequest
+    internal class UserRequest
     {
         private readonly String TransferURL = "http://localhost:8080/teacher";
         private readonly String GenderURL = "http://localhost:8080/gender";
@@ -20,7 +20,6 @@ namespace EducationSystemFrontEnd.Requests.User
 
             try
             {
-
                 WebRequest requestObjGet = WebRequest.Create(TransferURL + "/getall/" + get);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential("admin", "password");
@@ -45,7 +44,6 @@ namespace EducationSystemFrontEnd.Requests.User
 
             try
             {
-
                 WebRequest requestObjGet = WebRequest.Create(GenderURL + "/readBy/" + genderID);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential(Role, Education.getPassword());
@@ -70,7 +68,6 @@ namespace EducationSystemFrontEnd.Requests.User
 
             try
             {
-
                 WebRequest requestObjGet = WebRequest.Create(UserDemographyURL + "/read/" + perssalNumber);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential(Role, Education.getPassword());
@@ -88,13 +85,13 @@ namespace EducationSystemFrontEnd.Requests.User
             }
             return Response;
         }
+
         public String ReadRace(String raceID, String Role)
         {
             String Response = null;
 
             try
             {
-
                 WebRequest requestObjGet = WebRequest.Create(RaceURL + "/readBy/" + raceID);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential(Role, Education.getPassword());
@@ -112,9 +109,9 @@ namespace EducationSystemFrontEnd.Requests.User
             }
             return Response;
         }
+
         public string CreateRetirement(String persalNumber, String id, String firstName, String lastName, String date, String address, String postalAddress, String userRole, String gender, String race, String role)
         {
-
             String Response = "Created";
             string Json = "{" +
             "\"user\":{" +
@@ -155,7 +152,6 @@ namespace EducationSystemFrontEnd.Requests.User
 
             try
             {
-
                 WebRequest requestObjGet = WebRequest.Create(TransferURL + "/read/" + get);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential(Role, Education.getPassword());
@@ -180,7 +176,6 @@ namespace EducationSystemFrontEnd.Requests.User
 
             try
             {
-
                 WebRequest requestObjGet = WebRequest.Create(TransferURL + "/delete/" + get);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential(Role, Education.getPassword());

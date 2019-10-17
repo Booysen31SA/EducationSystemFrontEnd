@@ -1,6 +1,6 @@
 ﻿namespace EducationSystemFrontEnd.Requests.Gender
 {
-    class GenderFill
+    internal class GenderFill
     {
     }
 }

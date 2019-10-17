@@ -1,7 +1,6 @@
 ﻿using EducationSystemFrontEnd.GUI.LoginForm;
 using EducationSystemFrontEnd.GUI.UserControlWindows;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd
@@ -11,24 +10,27 @@ namespace EducationSystemFrontEnd
         private static String persal_Number;
         private static String User_Role;
         private static String password;
+
         public EducationSystem()
         {
             InitializeComponent();
         }
 
-
         private void EducationSystem_Load(object sender, EventArgs e)
         {
             CredentialCheck();
         }
+
         public String getPassword()
         {
             return password;
         }
+
         public String getUserName()
         {
             return persal_Number;
         }
+
         public String getRole()
         {
             return User_Role;
@@ -54,7 +56,6 @@ namespace EducationSystemFrontEnd
             TransferDisplay();
         }
 
-
         public void CredentialCheck()
         {
             if (persal_Number == null || User_Role == null || password == null)
@@ -63,6 +64,7 @@ namespace EducationSystemFrontEnd
                 loginForm.Show();
             }
         }
+
         public void updateCred(String num, String role, String pss)
         {
             persal_Number = num;
@@ -80,10 +82,10 @@ namespace EducationSystemFrontEnd
             }
             else
             {
-
                 UserUserControl.Instance.BringToFront();
             }
         }
+
         private void AppointmentDisplay()
         {
             if (!ContentPanel.Controls.Contains(AppointmentUserControl.Instance))
@@ -96,8 +98,8 @@ namespace EducationSystemFrontEnd
             {
                 AppointmentUserControl.Instance.BringToFront();
             }
-
         }
+
         private void RetirementDisplay()
         {
             if (!ContentPanel.Controls.Contains(RetirementUserControl.Instance))
@@ -111,6 +113,7 @@ namespace EducationSystemFrontEnd
                 RetirementUserControl.Instance.BringToFront();
             }
         }
+
         private void TransferDisplay()
         {
             if (!ContentPanel.Controls.Contains(TransferUserControl.Instance))
@@ -124,6 +127,7 @@ namespace EducationSystemFrontEnd
                 TransferUserControl.Instance.BringToFront();
             }
         }
+
         private void BlankDisplay()
         {
             if (!ContentPanel.Controls.Contains(BlacnkUserControl.Instance))
@@ -144,12 +148,11 @@ namespace EducationSystemFrontEnd
             persal_Number = null;
             User_Role = null;
             password = null;
-         //   if (true && (components != null))
-           // {
-             //   components.Dispose();
+            //   if (true && (components != null))
+            // {
+            //   components.Dispose();
             //}
             //base.Dispose(true);
         }
-
     }
 }

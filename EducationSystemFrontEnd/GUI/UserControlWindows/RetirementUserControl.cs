@@ -12,6 +12,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
         private static RetirementUserControl _instance;
         private EducationSystem Education = new EducationSystem();
         private RetirementRequest retirementRequest = new RetirementRequest();
+
         public RetirementUserControl()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
         {
             GetAll();
         }
+
         public static RetirementUserControl Instance
         {
             get
@@ -70,13 +72,13 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                 }
             }
         }
+
         public void GetAll()
         {
             listView2.Items.Clear();
             String Appointmentresponse = retirementRequest.GetAllRetirements("retirement");
             String DateAndTimeResponse = retirementRequest.GetAllRetirements("retirementStatus");
             listView2.View = View.Details;
-
 
             listView2.GridLines = true;
             if (Appointmentresponse != null)
@@ -89,7 +91,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                     int indexStatus = StatusCollection.FindIndex(delegate (StatusObj i) { return i.persal_Number.Equals(pl.persal_Num); });
                     listView2.Items.Add(new ListViewItem(new string[] { pl.persal_Num, pl.iD, pl.firstName, pl.lastName, pl.payout.ToString(), StatusCollection.ElementAt(indexStatus).request }));
                 };
-
             }
         }
 
@@ -134,7 +135,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
                         getReadObject(response);
                     }
                 }
-
             }
             else
             {
@@ -176,7 +176,6 @@ namespace EducationSystemFrontEnd.GUI.UserControlWindows
             {
                 String response = retirementRequest.DeleteAppointment(DeleteRetirement.Text, Education.getRole());
                 GetAll();
-
             }
         }
 

@@ -34,7 +34,6 @@ namespace EducationSystemFrontEnd.GUI.LoginForm
         {
             if (userJson == null)
             {
-
             }
             else
             {
@@ -54,6 +53,7 @@ namespace EducationSystemFrontEnd.GUI.LoginForm
                 }
             }
         }
+
         private void ButtonCheck()
         {
             if (PersalNumberTextBox.Text.Length > 0 && passwordTextBox.Text.Length > 0)

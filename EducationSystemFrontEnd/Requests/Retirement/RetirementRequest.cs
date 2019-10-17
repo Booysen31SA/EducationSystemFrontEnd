@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace EducationSystemFrontEnd.Requests.Retirement
 {
-    class RetirementRequest
+    internal class RetirementRequest
     {
         private readonly String RetirementURL = "http://localhost:8080/retirement";
         private EducationSystem Education = new EducationSystem();
@@ -17,7 +17,6 @@ namespace EducationSystemFrontEnd.Requests.Retirement
 
             try
             {
-
                 WebRequest requestObjGet = WebRequest.Create(RetirementURL + "/getall/" + get);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential("admin", "password");
@@ -35,9 +34,9 @@ namespace EducationSystemFrontEnd.Requests.Retirement
             }
             return Response;
         }
+
         public string CreateRetirement(String persalNumber, String id, String firstName, String lastName, double payout, String request, String role)
         {
-
             String Response = "Created";
             string Json = "{" +
             "\"retirement\":{" +
@@ -69,7 +68,6 @@ namespace EducationSystemFrontEnd.Requests.Retirement
 
             try
             {
-
                 WebRequest requestObjGet = WebRequest.Create(RetirementURL + "/read/" + get);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential(Role, Education.getPassword());
@@ -79,7 +77,6 @@ namespace EducationSystemFrontEnd.Requests.Retirement
             }
             catch (WebException e)
             {
-
                 String error = e.ToString();
                 if (error.Contains("The remote server returned an error: (500) Internal Server Error"))
                 {
@@ -89,7 +86,6 @@ namespace EducationSystemFrontEnd.Requests.Retirement
                 {
                     MessageBox.Show("unauthorized Access, You Do not have the Required Permission");
                 }
-
             }
             return Response;
         }
@@ -100,7 +96,6 @@ namespace EducationSystemFrontEnd.Requests.Retirement
 
             try
             {
-
                 WebRequest requestObjGet = WebRequest.Create(RetirementURL + "/delete/" + get);
                 requestObjGet.Method = "GET";
                 requestObjGet.Credentials = new NetworkCredential(Role, Education.getPassword());
@@ -110,7 +105,6 @@ namespace EducationSystemFrontEnd.Requests.Retirement
             }
             catch (WebException e)
             {
-
                 String error = e.ToString();
                 if (error.Contains("The remote server returned an error: (500) Internal Server Error"))
                 {
@@ -120,7 +114,6 @@ namespace EducationSystemFrontEnd.Requests.Retirement
                 {
                     MessageBox.Show("unauthorized Access, You Do not have the Required Permission");
                 }
-
             }
             return Response;
         }
